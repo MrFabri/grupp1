@@ -5,7 +5,7 @@ Jaimen, var inte med på föreläsningen eller mötet. Har skickat meddelande på ITs
 ##
 
 Praktisk info:
-Vedad kommer åka iväg till Bosnien, tillbaka på torsdag,
+Vedad kommer åka iväg till Bosnien, tillbaka på torsdag. Han kommer kunna kolla till discord och göra saker sporadiskt.
 Vedad jobbad oftast 8-16 på vardagar, men finns med på slack/discord under tiden.  Har helst möten helst efter 16.00.
 Abdul, jobbar efter 15.00-23.00. Börjar nästa vecka 19:e.
 Arash & Pontus finns tillgängliga 24/7 och helger, Fabricio 24/7 men ej helger.
@@ -16,16 +16,21 @@ Vi tittade igenom varandras kod för att avgöra vems kod vi skulle använda.
 Vi bestämde att vi använder Richards kod och gör fin putsningar i slutet om vi har tid.
 Fabrico är git master och repot ligger på hans konto. https://github.com/MrFabri/grupp1
 
-Nästa möte är ca 16 idag (måndag) efter det möte kl. 09.00 imorgon (tisdag 15/11), vid möten ska vi föra antekningar live i discord så att de som inte har möjlighet att medverka helatiden kan ge input och se vad som händer. 
+Nästa möte är ca 16 idag (måndag) efter det möte kl. 09.00 imorgon (tisdag 15/11), vid möten ska vi föra anteckningar live i discord så att de som inte har möjlighet att medverka helatiden kan ge input och se vad som händer. 
 
 Möten Tisdagar och Fredagar, exakt tid bestäms längre fram.
 
+Börja med att koda tillsammans. 
+Sen bryta ner projektet i mindre delar och dela upp arbetet.
+
 ##
 
+Vi testade Live Share extentionet på VS Code och ändrade lite i strukturen av Richards kod. Vi började skriva på readme.md vad som behövs göras.
 
-API ? 
-GITHUB ? 
-Vi behöver allas github användarnman för att ge access till vårt grupp-repo.
+##
 
-Vi bryter ner projektet i olika delar. 
+Tills imorgon, ska vi på egen hand gå igenom projektet och bryta ner det i mindre delar. Imorgon ska vi disktuera dessa och ev. börja med HTML semantik och CSS om vi hinner.
+
+##
+
 
