@@ -10,25 +10,31 @@
 </head>
 
 <body>
+    <!-- Header & Nav -->
     <header>
+        <a href="/index.html"></a>
         <h1>Hacker Escape Rooms</h1>
     </header>
     <nav class="main-nav">
         <button class="main-nav-toggle"></button>
         <menu class="main-menu">
-            <li class="main-menu-item"><a href="">Play online</a></li>
-            <li class="main-menu-item"><a href="">Play on-site</a></li>
+            <li class="main-menu-item"><a href="challenges.html">Play online</a></li>
+            <li class="main-menu-item"><a href="challenges.html">Play on-site</a></li>
             <li class="main-menu-item"><a href="">The story</a></li>
             <li class="main-menu-item"><a href="">Contact us </a></li>
         </menu>
     </nav>
+
+    <!-- Hero -->
     <section class="hero">
         <img alt="Hacker in front of screens" src="src/assets/hero.png">
         <div class="hero-cta">
-            <a class="button primary" href="">Online challenges</a>
-            <a class="button secondary" href="">On-site challenges</a>
+            <a class="button primary" href="challenges.html">Online challenges</a>
+            <a class="button secondary" href="challenges.html">On-site challenges</a>
         </div>
     </section>
+
+    <!-- Testimonials -->
     <section class="testimonials">
         <ul class="testimonial-list">
             <li class="testimonial-item">
@@ -53,6 +59,8 @@
             </li>
         </ul>
     </section>
+
+    <!-- Challenges -->
     <section class="challenges">
         <h2>Popular challenges right now</h2>
         <ul class="challenge-list">
@@ -124,6 +132,7 @@
         </div>
     </section>
 
+    <!-- Story -->
     <section class="story">
         <p>
             Quodsi haberent magnalia inter potentiam et divitias, et non illam
@@ -133,6 +142,7 @@
         <a class="button primary" href="">Read the full story</a>
     </section>
 
+    <!-- USPS -->
     <section class="usps">
         <div class="usp">
             <img class="usp-image" alt="Two friends in front of a computer" src="src/assets/usp1.png">
@@ -162,6 +172,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-summary">
             <h2>[Esc] Hacker Escape Rooms</h2>
@@ -190,6 +201,20 @@
             </menu>
         </nav>
     </footer>
+
+    <!-- Popup -->
+    <section class="modal">
+        <div>
+            <h3>Book room "titel genereras med js"</h3>
+            <p>What date would you like to come?</p>
+            <div class="date">
+                <small>Date</small>
+                <input type="Date"> <!-- ev. skriva en funktion som hämtar den första lediga tiden och fyller i value="" sätt även min="" till första leiga datum occh max="" till om 2 år från dagen datum-->
+            </div>
+            <button class="button primary">Search available times</button>
+        </div>
+    </section>
+
     <script src="app.js"></script>
 </body>
 
