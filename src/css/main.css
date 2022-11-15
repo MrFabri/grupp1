@@ -68,7 +68,7 @@ header h1 {
   font-weight: 700;
   font-size: 22px;
   width: 120px;
-  background-image: url("logo.png");
+  background-image: url("/src/assets/logo.png");
   background-size: 120px auto;
   background-repeat: no-repeat;
 }
