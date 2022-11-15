@@ -24,6 +24,8 @@
 >          - behöver nog en js funktion för att visa de
 >        - tack sida för bokning.
 >          - en länk
+>
+> 7. Automatiskt filtrera i "our challenges" för online och on-site beroende på vilken knapp man trycker på i index.html  
 
 # Tools
 > - Node

@@ -32,14 +32,15 @@ li {
 
     .rating-star {
         list-style-type: none;
-        width: 23px;
-        height: 26px;
-        background-image: url(star-inactive.png);
-        background-size: contain;
+        width: 1rem;
+        height: 1rem;
+        background-image: url('/src/assets/star-empty.svg');
+        background-size: cover;
         background-repeat: no-repeat;
+        background-position: center;
 
         &.active {
-            background-image: url(star-active.png);
+            background-image: url('/src/assets/star.svg');
         }
     }
 }

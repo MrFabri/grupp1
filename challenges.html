@@ -11,8 +11,10 @@
 
 <body>
     <header>
-        <h1>Our Challenges</h1>
+        <a href="/index.html"></a>
+        <h1>Hacker Escape Rooms</h1>
     </header>
+
     <nav class="main-nav">
         <button class="main-nav-toggle"></button>
         <menu class="main-menu">
@@ -22,6 +24,58 @@
             <li class="main-menu-item"><a href="">Contact us </a></li>
         </menu>
     </nav>
+
+    <main>
+        <h1>Our challenges</h1>
+
+        <button class="filter-btn button">Filter challenges</button>
+
+        <section class="filter">
+            <h2 class="h2-filter-challenges">Filter Challenges</h2>
+            <button class="close-filter">Close btn</button>
+            <h3 class="h3-by-type">By type</h3>
+            <form class="form-by-type">
+                    
+                <label for="online"><input type="checkbox" name="online" id="online" value="online"> Include online challenges</label>
+
+                <label for="onsite"><input type="checkbox" name="onsite" id="onsite" value="onsite"> Include on-site challenges</label>
+            </form>
+
+            <h3 class="h3-by-rating">By rating</h3>
+            <ul role="meter" class="rating max-rating" aria-label="rating" arial-valuemin="0" aria-valuemax="5"
+            aria-valuenow="1" aria-valuetext="1 out of 5">
+
+                <li class="rating-star active"></li>
+                <li class="rating-star"></li>
+                <li class="rating-star"></li>
+                <li class="rating-star"></li>
+                <li class="rating-star"></li>
+            </ul>
+            <p class="p-to">to</p>
+            <ul role="meter" class="rating min-rating" aria-label="rating" arial-valuemin="0" aria-valuemax="5"
+            aria-valuenow="5" aria-valuetext="5 out of 5">
+
+                <li class="rating-star active"></li>
+                <li class="rating-star active"></li>
+                <li class="rating-star active"></li>
+                <li class="rating-star active"></li>
+                <li class="rating-star active"></li>
+            </ul>
+            <h3 class="h3-by-tags">By tags</h3>
+            <button class="tag-button">Linux<button>
+            <h3 class="h3-search-keyword">Or type to search for keyword</h3>
+            
+            <input class="input-search-keyword" type="text" placeholder="Start typing to filter">
+            
+        </section>
+
+
+
+        <section class="challenges">
+
+        </section>
+
+    </main>
 
     <footer>
         <div class="footer-summary">

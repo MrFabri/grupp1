@@ -6,6 +6,7 @@ html, body {
     padding: 0;
     font-family: Roboto;
     font-size: 18px;
+    box-sizing: border-box;
 
     @media (min-width: $bp-large) {
         font-size: 24px;
@@ -24,6 +25,7 @@ img {
 @import "sections/hero.scss";
 @import "sections/testimonials.scss";
 @import "sections/challenges.scss";
+@import "sections/modal.scss";
 @import "sections/story.scss";
 @import "sections/usps.scss";
 @import "sections/footer.scss";
