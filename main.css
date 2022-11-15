@@ -316,6 +316,11 @@ header h1 {
 .challenge-list {
   display: flex;
   overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.challenge-list::-webkit-scrollbar { /* Webkit */
+  display: none;
 }
 
 .challenge-item {
