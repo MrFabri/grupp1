@@ -1,26 +1,27 @@
-## Möte 15/11
+## MÃ¶te 15/11
 
-Jaimen kom till discord, han skrev att han jobbar 9-16 på dagarna, men har koll på discord samtidigt.
+Jaimen kom till discord, han skrev att han jobbar 9-16 pÃ¥ dagarna, men har koll pÃ¥ discord samtidigt.
 
-Vi hade en kort genomgång om git och hur vi ska använda det i kort:
-* varje ändring ska göras i en ny branch
+Vi hade en kort genomgÃ¥ng om git och hur vi ska anvÃ¤nda det i kort:
+* varje Ã¤ndring ska gÃ¶ras i en ny branch
 * sen skapa en pull-request
-* pull requesten ska godkännas av någon annan (man ska alltså inte godkänna sin egna merge requests)
-* commit meddelanden ska skrivas på engelska, i då-tid och man ska skriva sitt namn i slutet av commit meddelandet.
+* pull requesten ska godkÃ¤nnas av nÃ¥gon annan (man ska alltsÃ¥ inte godkÃ¤nna sin egna merge requests)
+* commit meddelanden ska skrivas pÃ¥ engelska, i dÃ¥-tid och man ska skriva sitt namn i slutet av commit meddelandet.
 
 Vi pratade om namn konventioner for html, css och js:
-Till html/css använder vi hyphen (-),
-till JS använder vi camelCase.
+Till html/css anvÃ¤nder vi hyphen (-),
+till JS anvÃ¤nder vi camelCase.
 
-Arash, Abdul, Ponuts och Fabricio kodade tillsammans genom VS code extentionet Live Share. Vi gjorde om fil strukurerna för sidan (se merge reqeust text) och skapade challenges.html. Fixade html och css för den. Vi gjorde mycket av filter rutans css och html och modal'ens. Blev inte klara med allt
+Arash, Abdul, Ponuts och Fabricio kodade tillsammans genom VS code extentionet Live Share. Vi gjorde om fil strukurerna fÃ¶r sidan (se merge reqeust text) och skapade challenges.html. Fixade html och css fÃ¶r den. Vi gjorde mycket av filter rutans css och html och modal'ens. Blev inte klara med allt
 
-Vi lämnade in grupp planeringen.
+Vi lÃ¤mnade in grupp planeringen.
+
+##
+
+Tills imorgon, fundera pÃ¥ hur vi ska dela upp kodningen fÃ¶r funktionerna sÃ¥ att alla har nÃ¥got de kan gÃ¶ra.
+LÃ¤s pÃ¥ om Github projects (https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects)
+
+Vi trÃ¤ffas imorgon efter fÃ¶relÃ¤sningen.
 
 ##
 
-Tills imorgon, fundera på hur vi ska dela upp kodningen för funktionerna så att alla har något de kan göra.
-Läs på om Github projects (https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects)
-
-Vi träffas imorgon efter föreläsningen.
-
-##
