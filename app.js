@@ -1,6 +1,6 @@
 const mainNav = document.querySelector('.main-nav');
-const nav = document.querySelector('.main-nav-toggle');
+const mainNavToggle = document.querySelector('.main-nav-toggle');
 
-nav.addEventListener('click', ()=> {
+mainNavToggle.addEventListener('click', ()=> {
     mainNav.classList.toggle('open');
 });
