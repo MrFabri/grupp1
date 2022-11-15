@@ -30,6 +30,12 @@
 > - Sass
 
 # Praktiska frågor
-> - Komma överrens om namngivning för variabler och strukturer
-> - Komma överrens om git commit meddelande struktur
-> - Hur vi ska sammarbeta med git
+> Namngivning för variabler och strukturer:
+> - Till html/css använder vi hyphen (-) ett-exempel
+> - Till JS använder vi camelCase ettExempel
+
+> Hur vi ska sammarbeta med git:
+> - varje ändring ska göras i en ny branch
+> - sen skapa en pull-request
+> - pull requesten ska godkännas av någon annan (man ska alltså inte godkänna sin egna merge requests)
+> - commit meddelanden ska skrivas på engelska, i då-tid och man ska skriva sitt namn i slutet av commit meddelandet.
