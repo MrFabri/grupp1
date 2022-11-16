@@ -1,13 +1,13 @@
 @import "variables.scss";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-html, body {
+body {
     margin: 0;
     padding: 0;
+    width: 100%;
     font-family: Roboto;
     font-size: 18px;
-    box-sizing: border-box;
-
+    
     @media (min-width: $bp-large) {
         font-size: 24px;
     }
