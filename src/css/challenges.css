@@ -6,6 +6,16 @@ li {
   padding: 0;
 }
 
+.sec {
+  width: 100%;
+  height: auto;
+  padding: 0 5%;
+}
+.sec .sec-cont {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .button {
   display: block;
   border-radius: 4px;
