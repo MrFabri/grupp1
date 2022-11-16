@@ -10,123 +10,129 @@
 </head>
 
 <body>
-    <!-- Header -->
-    <header>
-        <a href="index.html"></a>
-        <h1>Hacker Escape Rooms</h1>
-    </header>
-
-    <nav class="main-nav">
-        <button class="main-nav-toggle"></button>
-        <menu class="main-menu">
-            <li class="main-menu-item"><a href="">Play online</a></li>
-            <li class="main-menu-item"><a href="">Play on-site</a></li>
-            <li class="main-menu-item"><a href="">The story</a></li>
-            <li class="main-menu-item"><a href="">Contact us </a></li>
-        </menu>
-    </nav>
+    <!-- Header & Nav -->
+    <div class="sec header">
+        <div class="sec-cont">
+            <header>
+                <a href="index.html"></a>
+                <h1>Hacker Escape Rooms</h1>
+            </header>
+            <nav class="main-nav">
+                <button class="main-nav-toggle"></button>
+                <menu class="main-menu">
+                    <li class="main-menu-item"><a href="challenges.html">Play online</a></li>
+                    <li class="main-menu-item"><a href="challenges.html">Play on-site</a></li>
+                    <li class="main-menu-item"><a href="">The story</a></li>
+                    <li class="main-menu-item"><a href="">Contact us </a></li>
+                </menu>
+            </nav>
+        </div>
+    </div>
 
     <!-- Main -->
-    <main>
-        <h1>Our challenges</h1>
-
-        <button class="filter-btn">Filter challenges</button>
-
-        <section class="filter">
-            <div class="close-filter"></div>
-            <h2 class="h2-filter-challenges">Filter Challenges</h2>
-
-            <section class="by-ctn">
-                <div class="part-one">
-                    <h3 class="h3-by-type">By type</h3>
-                    <form class="form-by-type">
-                        <label for="online"><input type="checkbox" name="online" id="online" value="online"> Include online challenges</label>
-                        <label for="onsite"><input type="checkbox" name="onsite" id="onsite" value="onsite"> Include on-site challenges</label>
-                    </form>
-                </div>
+    <div class="sec">
+        <main class="sec-cont">
+            <h1>Our challenges</h1>
     
-                <div class="part-two">
-                    <h3 class="h3-by-rating">By rating</h3>
-                    <div class="container-stars">
-                        <ul role="meter" class="rating max-rating" aria-label="rating" arial-valuemin="0" aria-valuemax="5"
-                            aria-valuenow="1" aria-valuetext="1 out of 5">
-                
-                            <li class="rating-star active"></li>
-                            <li class="rating-star"></li>
-                            <li class="rating-star"></li>
-                            <li class="rating-star"></li>
-                            <li class="rating-star"></li>
-                        </ul>
-                        <p>to</p>
-                        <ul role="meter" class="rating min-rating" aria-label="rating" arial-valuemin="0" aria-valuemax="5"
-                            aria-valuenow="5" aria-valuetext="5 out of 5">
-                
-                            <li class="rating-star active"></li>
-                            <li class="rating-star active"></li>
-                            <li class="rating-star active"></li>
-                            <li class="rating-star active"></li>
-                            <li class="rating-star active"></li>
-                        </ul>
-                    </div>
-                </div>
+            <button class="filter-btn">Filter challenges</button>
     
-                <div class="part-three">
-                    <h3 class="h3-by-tags">By tags</h3>
-                    <div class="by-tag-buttons">
-                        <button class="tag-button selected">Web</button>
-                        <button class="tag-button">Linux</button>
-                        <button class="tag-button selected">Cryptography</button>
-                        <button class="tag-button">Coding</button>
-                        <button class="tag-button">Some other tag</button>
-                        <button class="tag-button">A final tag</button>
+            <section class="filter">
+                <div class="close-filter"></div>
+                <h2 class="h2-filter-challenges">Filter Challenges</h2>
+    
+                <section class="by-ctn">
+                    <div class="part-one">
+                        <h3 class="h3-by-type">By type</h3>
+                        <form class="form-by-type">
+                            <label for="online"><input type="checkbox" name="online" id="online" value="online"> Include online challenges</label>
+                            <label for="onsite"><input type="checkbox" name="onsite" id="onsite" value="onsite"> Include on-site challenges</label>
+                        </form>
                     </div>
-                </div>
+        
+                    <div class="part-two">
+                        <h3 class="h3-by-rating">By rating</h3>
+                        <div class="container-stars">
+                            <ul role="meter" class="rating max-rating" aria-label="rating" arial-valuemin="0" aria-valuemax="5"
+                                aria-valuenow="1" aria-valuetext="1 out of 5">
+                    
+                                <li class="rating-star active"></li>
+                                <li class="rating-star"></li>
+                                <li class="rating-star"></li>
+                                <li class="rating-star"></li>
+                                <li class="rating-star"></li>
+                            </ul>
+                            <p>to</p>
+                            <ul role="meter" class="rating min-rating" aria-label="rating" arial-valuemin="0" aria-valuemax="5"
+                                aria-valuenow="5" aria-valuetext="5 out of 5">
+                    
+                                <li class="rating-star active"></li>
+                                <li class="rating-star active"></li>
+                                <li class="rating-star active"></li>
+                                <li class="rating-star active"></li>
+                                <li class="rating-star active"></li>
+                            </ul>
+                        </div>
+                    </div>
+        
+                    <div class="part-three">
+                        <h3 class="h3-by-tags">By tags</h3>
+                        <div class="by-tag-buttons">
+                            <button class="tag-button selected">Web</button>
+                            <button class="tag-button">Linux</button>
+                            <button class="tag-button selected">Cryptography</button>
+                            <button class="tag-button">Coding</button>
+                            <button class="tag-button">Some other tag</button>
+                            <button class="tag-button">A final tag</button>
+                        </div>
+                    </div>
+                </section>
+    
+                <section class="search-cont">
+                    <h3 class="h3-search-keyword">Or type to search for keyword</h3>
+                    <input class="input-search-keyword" type="text" placeholder="Start typing to filter">
+                </section>
+                
             </section>
-
-            <section class="search-cont">
-                <h3 class="h3-search-keyword">Or type to search for keyword</h3>
-                <input class="input-search-keyword" type="text" placeholder="Start typing to filter">
+    
+    
+    
+            <section class="challenges">
+    
             </section>
-            
-        </section>
-
-
-
-        <section class="challenges">
-
-        </section>
-
-    </main>
-
-
+    
+        </main>
+    </div>
+   
     <!-- Footer -->
-    <footer>
-        <div class="footer-summary">
-            <h2>[Esc] Hacker Escape Rooms</h2>
-            <p>
-                Quodsi haberent magnalia inter potentiam et divitias, et non
-                illam quidem haec eo spectant haec quoque vos omnino desit illud
-                quo solo felicitatis libertatisque perficiuntur.
-            </p>
+    <footer class="sec">
+        <div class="sec-cont">
+            <div class="footer-summary">
+                <h2>[Esc] Hacker Escape Rooms</h2>
+                <p>
+                    Quodsi haberent magnalia inter potentiam et divitias, et non
+                    illam quidem haec eo spectant haec quoque vos omnino desit illud
+                    quo solo felicitatis libertatisque perficiuntur.
+                </p>
+            </div>
+            <nav class="footer-sitemap">
+                <h2>Site map</h2>
+                <menu>
+                    <li class="misc-link"><a href="">The Story</a></li>
+                    <li class="misc-link"><a href="">Contact Us</a></li>
+                    <li class="misc-link"><a href="">Legal</a></li>
+                    <li class="play-link"><a href="">Play online</a></li>
+                    <li class="play-link"><a href="">Play on-site</a></li>
+                </menu>
+            </nav>
+            <nav class="footer-social">
+                <h2>Follow us on</h2>
+                <menu>
+                    <li><a href="">Facebook</a></li>
+                    <li><a href="">Instagram</a></li>
+                    <li><a href="">Twitter</a></li>
+                </menu>
+            </nav>
         </div>
-        <nav class="footer-sitemap">
-            <h2>Site map</h2>
-            <menu>
-                <li class="misc-link"><a href="">The Story</a></li>
-                <li class="misc-link"><a href="">Contact Us</a></li>
-                <li class="misc-link"><a href="">Legal</a></li>
-                <li class="play-link"><a href="">Play online</a></li>
-                <li class="play-link"><a href="">Play on-site</a></li>
-            </menu>
-        </nav>
-        <nav class="footer-social">
-            <h2>Follow us on</h2>
-            <menu>
-                <li><a href="">Facebook</a></li>
-                <li><a href="">Instagram</a></li>
-                <li><a href="">Twitter</a></li>
-            </menu>
-        </nav>
     </footer>
     <script src="app.js"></script>
 </body>

@@ -1,7 +1,10 @@
-header {
+.sec.header {
     background-color: $c-darkblue;
+}
+
+header {
     color: white;
-    padding: 1rem 5%;
+    padding: 1rem 0;
     display: flex;
 
     a {
