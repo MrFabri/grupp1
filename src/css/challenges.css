@@ -55,13 +55,13 @@ li {
   list-style-type: none;
   width: 1rem;
   height: 1rem;
-  background-image: url("/src/assets/star-empty.svg");
+  background-image: url("./src/assets/star-empty.svg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 .rating .rating-star.active {
-  background-image: url("/src/assets/star.svg");
+  background-image: url("./src/assets/star.svg");
 }
 
 html, body {
@@ -88,7 +88,7 @@ header {
 }
 header a {
   display: inline-block;
-  background-image: url("/src/assets/logo.png");
+  background-image: url("./../../src/assets/logo.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
