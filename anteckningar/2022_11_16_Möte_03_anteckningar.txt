@@ -1,0 +1,8 @@
+## Möte 16/11
+
+Vi diskuterade om hur vi ska dela upp uppgiften. På förslag nu ligger det att vi delar upp den i 3 delar, "Ladda challenge-data från API", "Filtrera challenges" och "Boka challenge", och man arbetar två personer per del.
+Vi avvaktar till efterföreläsningen imorgon om uppdelning och vi tar lite egen studietid fram tills efter föreläsningen om API. För det underlättar hur vi ska lösa js-kodningen när vi fått mer information om API't.
+
+Arash, Pontus och Fabricio (även Abdul stundvis) har med Mob-coding session gjort klart html och css för kvarvarande delar.
+
+###
