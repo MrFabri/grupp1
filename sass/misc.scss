@@ -26,9 +26,35 @@ li {
     }
 }
 
+.tag-button {
+    background-color: transparent;
+    color: $c-lightblue;
+    border: 2px solid $c-lightblue;
+    border-radius: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 3px 8px 4px 8px;
+    
+    /* display: inline-block; */
+
+    &.selected {
+        background-color: $c-blue;
+        border: 2px solid $c-blue;
+        color: white;
+    }
+
+    &:hover {
+        background-color: $c-blue;
+        border: 2px solid $c-blue;
+        color: white;
+        /* box-shadow: 0px 0px 4px $c-darkblue; */
+    } 
+    
+}
+
 .rating {
     display: flex;
-    gap: 0.6em;
+    gap: 0.5em;
 
     .rating-star {
         list-style-type: none;
