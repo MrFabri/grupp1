@@ -157,4 +157,4 @@ function bookStepThree() {
 }
 
 // Starts the whole booking modal
-bookStepOne("ESC", 2);
+// bookStepOne("ESC", 2);
