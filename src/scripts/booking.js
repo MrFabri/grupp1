@@ -8,7 +8,7 @@ let date;
 let finalRes;
 
 // Book a room (First Step)
-function bookStepOne(title, challenge) {
+function book(title, challenge) {
   challengeTitle = title;
   challengeNumber = challenge;
 
@@ -94,7 +94,7 @@ function bookStepTwo() {
   });
 
   const time = document.querySelector("#time");
-  time.insertAdjacentHTML("afterbegin", dateTemplate)
+  time.insertAdjacentHTML("afterbegin", dateTemplate);
 
   // Submit
   const submitBtnTwo = document.querySelector("#submitBtnTwo");
@@ -157,4 +157,4 @@ function bookStepThree() {
 }
 
 // Starts the whole booking modal
-// bookStepOne("ESC", 2);
+// book("ESC", 2);
