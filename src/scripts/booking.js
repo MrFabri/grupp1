@@ -7,6 +7,22 @@ let times;
 let date;
 let finalRes;
 
+// Close Function, the booking process stops if you click outside the form
+function addCancelOption() {
+  const close = document.querySelector(".booking");
+  close.addEventListener('click', (e) => {
+    if(e.target.className == "booking"){
+      challengeTitle = "";
+      challengeNumber = "";
+      times = "";
+      date = "";
+      body.removeChild(close);
+      body.style.overflow = "auto";
+      return;
+    }
+  });
+}
+
 // Book a room (First Step)
 function book(title, challenge) {
   challengeTitle = title;
@@ -27,13 +43,15 @@ function book(title, challenge) {
   `;
   
   body.insertAdjacentHTML("afterbegin", firstTemplate);
-  body.style.position = "fixed";
+  body.style.overflow = "hidden";
 
   // Submit
   const submitBtn = document.querySelector("#submitBtnOne");
   submitBtn.addEventListener('click', () => {
     submitStepOne(challenge);
   });
+
+  addCancelOption();
 }
 
 // Submit Step 1
@@ -43,12 +61,18 @@ async function submitStepOne(challenge) {
   if (!date) {
     alert('Please fill the date field!');
     return;
-  } else {
-    const res = await fetch(`${api}/booking/available-times?date=${date}&challenge=${challenge}`);
-    times = await res.json();
-    times = times.slots;
-    bookStepTwo();
   }
+
+  const res = await fetch(`${api}/booking/available-times?date=${date}&challenge=${challenge}`);
+  times = await res.json();
+  times = times.slots;
+
+  if(!times) {
+    alert('That date is not available, try another one!')
+    return;
+  }
+
+  bookStepTwo();
 }
 
 // Book a room (Second Step)
@@ -113,10 +137,16 @@ function bookStepTwo() {
 
     submitStepTwo(challengeNumber, name,  email, date, timeSelected, participantSelected);
   });
+
+  addCancelOption();
 }
 
 // Submit Step 2
 async function submitStepTwo(challenge, name, email, date, time, participants) {
+  if(!name || !email) {
+    alert('Fill all the fields before submitting!');
+    return;
+  }
   const res = await fetch(`${api}/booking/reservations`, {
     method: 'POST',
     headers: {
@@ -154,6 +184,7 @@ function bookStepThree() {
 
   console.log(finalRes);
   body.insertAdjacentHTML("afterbegin", thirdTemplate);
+  addCancelOption();
 }
 
 // Starts the whole booking modal

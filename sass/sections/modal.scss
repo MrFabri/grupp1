@@ -1,11 +1,11 @@
 .booking {
     z-index: 100;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100vh;
     top: 0;
     left: 0;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(206, 197, 197, 0.418);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,8 +14,10 @@
 .first-modal,
 .second-modal,
 .third-modal {
+    z-index: 200;
+    box-shadow: 0 0 1em rgb(0 0 0 / 20%);
     animation: modalFadeScaleIn 1s;
-    width: 50%;
+    width: 80%;
     height: auto;
     padding: 1em;
     background-color: white;
@@ -40,7 +42,7 @@
 }
 
 .first-modal {
-
+    
     label,
     input {
         display: block;
@@ -63,39 +65,29 @@
     select {display: block;font-size: 14px;}
 
     input,
-    select {margin-bottom: 1.3rem;padding: 0.5rem 1rem;}
+    select {margin-bottom: 1.3rem;}
 
-    select {
-        // appearance: none;
-        border: 0;
-        outline: 0;
-        // width: 20em;
+    input, select {
         padding: 0.7em 2em;
         border-radius: 0.25em;
         box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+        border: 0;
+        outline: 0;
+    }
+
+    select {
+        // appearance: none;
         cursor: pointer;
-
         /* Remove focus outline */
-        &:focus {
-            outline: none;
-        }
-
-        /* Remove IE arrow */
-        &::-ms-expand {
-            display: none;
-        }
-
-        option {
-            color: inherit;
-        }
+        &:focus {outline: none;}
+        option { color: inherit;}
     }
 
-    .btn-parent {
-        height: 3rem;
-    }
+    .btn-parent { height: 5rem;}
 }
+
 .third-modal {
-    padding: 12rem 0;
+    padding: 6rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,6 +98,15 @@
         color: $c-lightblue;
     }
 }
+
+@media (min-width: $bp-large) {
+    .first-modal,
+    .second-modal,
+    .third-modal {max-width: 40rem;}
+    .second-modal {.btn-parent { height: 3rem;}}
+    .third-modal {padding: 12rem 0;}
+}
+
 @keyframes modalFadeScaleIn {
     from {
         opacity: 0;

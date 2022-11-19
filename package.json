@@ -1,8 +1,8 @@
 {
-  "name": "02-esc",
+  "name": "esc-grupp1",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "sass": "sass --no-source-map sass/main.scss src/css/main.css",
     "watch": "sass --no-source-map --watch sass/main.scss src/css/main.css",
