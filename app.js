@@ -23,6 +23,8 @@ function doIt() {
             element.style.width = "calc(95%/3)";
             element.style.maxWidth = "400px";
             element.style.margin = "0";
+            challengesHtmlList.lastChild.style.marginRight = "auto";
+            challengesHtmlList.lastChild.style.paddingLeft = "2.5%";
         }
     }
 }
@@ -49,19 +51,6 @@ onSiteButtons.forEach(button => {
     })
 })
 
-//Checkbox for online challenges and listener
-/**onlineCheckBox.addEventListener("click", (ev) => {
-    if (onlineCheckBox.checked == true) {
-        displayOnlineRooms();
-    } else {
-        displayOnSiteRooms();
-    }
-})
-
-//Checkbox for On-Site challenges and listener
-const onSiteCheckBox = document.querySelector("input#onsite");
-*/
-
 // THE function that interwines everything
 
 function wellHello() {
@@ -81,14 +70,18 @@ function wellHello() {
     }
     document.cookie = "";
 
-    const onlineCheckBox = document.querySelector("input#online");
-    onlineCheckBox.addEventListener("click", (ev) => {
-        if (onlineCheckBox.checked == true) {
-            displayOnlineRooms();
-        } else {
-            displayOnSiteRooms();
-        }
-    })
+
+    // TO BE CONTINUED...
+
+
+    //    const onlineCheckBox = document.querySelector("input#online");
+    //   onlineCheckBox.addEventListener("click", (ev) => {
+    //     if (onlineCheckBox.checked == true) {
+    //        displayOnlineRooms();
+    //   } else {
+    //      displayOnSiteRooms();
+    //  }
+    // })
 
 }
 
@@ -117,7 +110,6 @@ async function displayAllRooms() {
     roomSection.style.marginTop = "2em";
     main.appendChild(roomSection);
     doIt();
-
 }
 
 
@@ -149,8 +141,6 @@ async function displayOnSiteRooms() {
         }
     });
     roomSection.appendChild(challengesHtmlList);
-    challengesHtmlList.lastChild.style.marginRight = "auto";
-    challengesHtmlList.lastChild.style.paddingLeft = "2.5%";
     roomSection.style.marginTop = "2em";
     main.appendChild(roomSection);
     doIt();
