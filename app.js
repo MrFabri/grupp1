@@ -106,7 +106,7 @@ async function displayAllRooms() {
     const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
     const data = await res.json();
     data.challenges.forEach(challenge => {
-        challengesHtmlList.appendChild(createChallengeItem(challenge));
+        challengesHtmlList.appendChild(createChallenge(challenge));
     });
     roomSection.appendChild(challengesHtmlList);
     roomSection.style.marginTop = "2em";
@@ -122,7 +122,7 @@ async function displayOnlineRooms() {
     const data = await res.json();
     data.challenges.forEach(challenge => {
         if (challenge.type == "online") {
-            challengesHtmlList.appendChild(createChallengeItem(challenge));
+            challengesHtmlList.appendChild(createChallenge(challenge));
         }
     });
     roomSection.appendChild(challengesHtmlList);
@@ -139,7 +139,7 @@ async function displayOnSiteRooms() {
     const data = await res.json();
     data.challenges.forEach(challenge => {
         if (challenge.type == "onsite") {
-            challengesHtmlList.appendChild(createChallengeItem(challenge));
+            challengesHtmlList.appendChild(createChallenge(challenge));
         }
     });
     roomSection.appendChild(challengesHtmlList);
@@ -149,9 +149,9 @@ async function displayOnSiteRooms() {
 }
 
 
-// Creates, styles and adds a challenge to a <li> element. Returns the <li> item.
+// Creates, styles and adds a challenge card to a <li> element. Returns the <li> element.
 
-function createChallengeItem(challenge) {
+function createChallenge(challenge) {
     const challengeItem = document.createElement("li");
     const roomImage = document.createElement("img");
     roomImage.src = challenge.image;
@@ -167,6 +167,8 @@ function createChallengeItem(challenge) {
     participants.textContent = challenge.minParticipants + "-" + challenge.maxParticipants + " participants";
     // participants.style.paddingLeft = "1em";
     //participants.classList.add("challenge-meta");
+    participants.dataset.minParticipants = challenge.minParticipants;
+    participants.dataset.maxParticipants = challenge.maxParticipants;
     tempDiv.appendChild(participants);
     const challengeDescription = document.createElement("p");
     challengeDescription.textContent = challenge.description;
@@ -175,7 +177,7 @@ function createChallengeItem(challenge) {
     //  challengeDescription.style.paddingLeft = "1em";
     tempDiv.appendChild(challengeDescription);
     createButton(tempDiv, challenge.type);
-    styleCards(tempDiv);
+    styleCard(tempDiv);
     //   challengeItem.style.width = "calc(95% / 3)";
     //challengeItem.style.width = "calc(95%/3)";
     //challengeItem.style.width = "100%"
@@ -192,9 +194,9 @@ function createChallengeItem(challenge) {
 }
 
 
-// Creates the stars on the challenge and positiones them.
+// Creates the stars on the challenge card and positiones them.
 
-function createStars(challengeItem, rating) {
+function createStars(challengeCard, rating) {
     const stars = document.createElement("ul");
     stars.classList.toggle("rating");
     for (let i = 0; i < 5; i++) {
@@ -206,36 +208,37 @@ function createStars(challengeItem, rating) {
         }
         stars.appendChild(star);
     }
-    challengeItem.appendChild(stars);
+    challengeCard.appendChild(stars);
 }
 
 
 // Makes the booking button for the displayed challenges.
 
-function createButton(challengeItem, challengeType) {
+function createButton(challengeCard, challengeType) {
     const button = document.createElement("button");
     button.className = "button primary";
     button.style.display = "block";
-    button.style.margin = "0 0 0 auto";
+    button.style.margin = "0 0.5em 0 auto";
     button.style.fontSize = " 0.7em";
     if (challengeType == "onsite") {
         button.textContent = "Book this room";
     } else {
         button.textContent = "Take challenge online";
     }
-    challengeItem.appendChild(button);
+    challengeCard.appendChild(button);
 }
 
 
 // Styles the displayed challenges.
 
-function styleCards(challengeItem) {
-    challengeItem.style.maxWidth = "400px";
-    challengeItem.style.borderRadius = "4px";
-    challengeItem.style.marginBottom = "1em";
-    challengeItem.style.paddingBottom = "0.5em";
-    challengeItem.style.boxShadow = "0 0 1em rgb(0 0 0 / 20%)";
+function styleCard(challengeCard) {
+    challengeCard.style.maxWidth = "400px";
+    challengeCard.style.borderRadius = "4px";
+    challengeCard.style.paddingBottom = "0.5em";
+    challengeCard.style.boxShadow = "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px";
 }
+
+
 
 // const modal = document.querySelector('.modal');
 // modal.innerHTML =
