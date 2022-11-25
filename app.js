@@ -11,20 +11,22 @@ window.onresize = doIt;
 // This function resizes the screen
 
 function doIt() {
-    const listElements = document.querySelectorAll("section > ul > li");
-    if (window.innerWidth < 1000) {
-        for (const element of listElements) {
-            element.style.width = "auto";
-            element.style.margin = "auto";
-            element.style.alignContent = "center";
-        }
-    } else {
-        for (const element of listElements) {
-            element.style.width = "calc(95%/3)";
-            element.style.maxWidth = "400px";
-            element.style.margin = "0";
-            challengesHtmlList.lastChild.style.marginRight = "auto";
-            challengesHtmlList.lastChild.style.paddingLeft = "2.5%";
+    if (document.location == "http://127.0.0.1:5500/challenges.html") {
+        const listElements = document.querySelectorAll("section > ul > li");
+        if (window.innerWidth < 1000) {
+            for (const element of listElements) {
+                element.style.width = "auto";
+                element.style.margin = "auto";
+                element.style.alignContent = "center";
+            }
+        } else {
+            for (const element of listElements) {
+                element.style.width = "calc(95%/3)";
+                element.style.maxWidth = "400px";
+                element.style.margin = "0";
+                challengesHtmlList.lastChild.style.marginRight = "auto";
+                challengesHtmlList.lastChild.style.paddingLeft = "2.5%";
+            }
         }
     }
 }
@@ -183,6 +185,9 @@ function createChallengeItem(challenge) {
     tempDiv.style.padding = "0.5em 0.5em";
     tempDiv.style.maxWidth = "400px";
     challengeItem.appendChild(tempDiv);
+    if (window.innerWidth < 1000) {
+        challengeItem.style.maxWidth = "400px";
+    }
     return challengeItem;
 }
 
