@@ -5,6 +5,56 @@ mainNavToggle.addEventListener('click', () => {
     mainNav.classList.toggle('open');
 });
 
+
+const topThreeInIndex = document.querySelectorAll("section.challenges > ul > li");
+
+async function threeHighestRanked() {
+    let topThreeByRating = [];
+    const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
+    const data = await res.json();
+    data.challenges.forEach(challenge => {
+        if (challenge.rating > 4) {
+            topThreeByRating.push(challenge);
+        }
+    })
+    if (topThreeByRating.length < 3) {
+        data.challenges.forEach(challenge => {
+            if (challenge.rating > 3 && challenge.rating <= 4) {
+                topThreeByRating.push(challenge);
+            }
+        })
+    }
+    for (let i = 0; i < topThreeByRating.length; i++) {
+        changeCardContent(topThreeInIndex[i], topThreeByRating[i]);
+    }
+}
+
+
+function changeCardContent(cardToBeChanged, theNewCard) {
+    cardToBeChanged.querySelector("img").src = theNewCard.image;
+    cardToBeChanged.querySelector("h3").innerHTML = theNewCard.title;
+    const stars = cardToBeChanged.querySelectorAll("ul > li");
+    for (let i = 0; i < stars.length; i++) {
+        if (i < theNewCard.rating) {
+            stars[i].className = "rating-star active";
+        } else {
+            stars[i].className = "rating-star";
+        }
+    }
+    const participants = cardToBeChanged.querySelector("small");
+    participants.innerHTML = theNewCard.minParticipants + "-" + theNewCard.maxParticipants + " participants";
+    participants.dataset.minParticipants = theNewCard.minParticipants;
+    participants.dataset.maxParticipants = theNewCard.maxParticipants;
+    cardToBeChanged.querySelector("p").innerHTML = theNewCard.description;
+    const button = cardToBeChanged.querySelector("button");
+    if (theNewCard.type == "online") {
+        button.innerHTML = "Take challenge online";
+    } else {
+        button.innerHTML = "Book this room";
+        button.className = "button secondary";
+    }
+}
+
 //makes the screen change upon resizing.
 window.onresize = doIt;
 
@@ -216,14 +266,15 @@ function createStars(challengeCard, rating) {
 
 function createButton(challengeCard, challengeType) {
     const button = document.createElement("button");
-    button.className = "button primary";
     button.style.display = "block";
     button.style.margin = "0 0.5em 0 auto";
     button.style.fontSize = " 0.7em";
     if (challengeType == "onsite") {
         button.textContent = "Book this room";
+        button.className = "button secondary";
     } else {
         button.textContent = "Take challenge online";
+        button.className = "button primary";
     }
     challengeCard.appendChild(button);
 }
@@ -237,8 +288,6 @@ function styleCard(challengeCard) {
     challengeCard.style.paddingBottom = "0.5em";
     challengeCard.style.boxShadow = "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px";
 }
-
-
 
 // const modal = document.querySelector('.modal');
 // modal.innerHTML =
