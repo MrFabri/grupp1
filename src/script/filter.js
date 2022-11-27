@@ -2,6 +2,8 @@ import { MyAPI } from './myApi.js';
 import { Renderer } from './myRenderer.js';
 import { FilterByTag } from './filterByTag.js';
 import { FilterByType } from './filterByType.js';
+import { RenderRating } from './renderByRating.js';
+import { FilterByRating } from './filterByRating.js';
 
 export class Filter {
 
@@ -21,14 +23,16 @@ export class Filter {
     */
 
     filter () {
-        const renderer = new Renderer();
+        const renderer = new Renderer(this.data);
         const filterByTag = new FilterByTag();
         const filterByType = new FilterByType();
+        const filerByRating = new FilterByRating();
         const filteredList = { challenges: [],};
 
         if ( 
             filterByTag.checkDOM() ||
-            filterByType.checkDOM()
+            filterByType.checkDOM() ||
+            filerByRating.checkDOM()
             ){
             
 
@@ -37,7 +41,8 @@ export class Filter {
                 // Checks for each filter if the challenge matches the filter or if all the DOM elements for that filter is empty
                 if (
                     (filterByTag.filter(challenge) || !filterByTag.checkDOM()) &&
-                    (filterByType.filter(challenge) || !filterByType.checkDOM())
+                    (filterByType.filter(challenge) || !filterByType.checkDOM()) &&
+                    filerByRating.filter(challenge)
                     ) {
 
                     filteredList.challenges.push(challenge);    
@@ -70,10 +75,15 @@ class Init {
         const api = new MyAPI();
         const data = await api.getData();
         const renderer = new Renderer();
+        const rating = new RenderRating();
 
         renderer.renderRooms(data);
-        renderer.renderTags(data);    
-        renderer.renderByTag(data);
+        renderer.renderTags(data);
+        renderer.renderType(data);
+        renderer.renderRating(data);
+
+        rating.render(data);
+
     };
 }
 

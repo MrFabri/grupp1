@@ -1,6 +1,12 @@
 import { Filter } from "./filter.js";
 
 export class Renderer {
+    
+    constructor (data) {
+        this.data = data;
+
+        const filter = new Filter(data);
+    }
 
     renderRooms(data) {
             document.querySelector(".rooms").innerHTML = "";
@@ -60,7 +66,7 @@ export class Renderer {
         });
     } 
 
-        renderByTag (data) {
+        renderType (data) {
             // adds eventlistener to ByType checkboxes
             const filterer = new Filter(data);
             const online = document.querySelector("#online");
@@ -71,11 +77,11 @@ export class Renderer {
                 if (onSite.checked) {
                     onSite.checked = false;
                 }
-                
+
                 filterer.filter()
             });
 
-            onsite.addEventListener("click", () => {
+            onSite.addEventListener("click", () => {
 
                 if (online.checked) {
                     online.checked = false;
