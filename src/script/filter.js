@@ -1,6 +1,7 @@
 import { MyAPI } from './myApi.js';
 import { Renderer } from './myRenderer.js';
-import { filterByTag } from './filterByTag.js';
+import { FilterByTag } from './filterByTag.js';
+import { FilterByType } from './filterByType.js';
 
 export class Filter {
 
@@ -21,30 +22,45 @@ export class Filter {
 
     filter () {
         const renderer = new Renderer();
+        const filterByTag = new FilterByTag();
+        const filterByType = new FilterByType();
         const filteredList = { challenges: [],};
 
-        this.data.challenges.forEach(challenge => {
+        if ( 
+            filterByTag.checkDOM() ||
+            filterByType.checkDOM()
+            ){
+            
 
-            /* if( filterByTag(challenge) &&
-                filterByText(challenge) && 
-                filterByType(challenge) && 
-                filterByType(challange) )  */
-            if (filterByTag(challenge)) {
 
-                filteredList.challenges.push(challenge);    
+            this.data.challenges.forEach(challenge => {
+                // Checks for each filter if the challenge matches the filter or if all the DOM elements for that filter is empty
+                if (
+                    (filterByTag.filter(challenge) || !filterByTag.checkDOM()) &&
+                    (filterByType.filter(challenge) || !filterByType.checkDOM())
+                    ) {
+
+                    filteredList.challenges.push(challenge);    
+                }
+            })
+
+
+            if (filteredList.challenges.length > 0 ){
+
+                renderer.renderRooms(filteredList);
+
+            } else {
+                document.querySelector(".rooms").innerHTML = "";
+                alert("No challenges matches your filter");
             }
-        })
-
-
-        if (filteredList.challenges.length > 0 ){
-
-            renderer.renderRooms(filteredList)
-
-        } else {
-
-            alert("No challenges matches your filter")
-        }
         
+        } else {
+            this.data.challenges.forEach(challenge => {
+                filteredList.challenges.push(challenge);
+                renderer.renderRooms(filteredList);
+            });
+        }
+
     }
 
 }
@@ -57,6 +73,7 @@ class Init {
 
         renderer.renderRooms(data);
         renderer.renderTags(data);    
+        renderer.renderByTag(data);
     };
 }
 

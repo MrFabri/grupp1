@@ -60,14 +60,29 @@ export class Renderer {
         });
     } 
 
-        /* renderByTag () {
+        renderByTag (data) {
             // adds eventlistener to ByType checkboxes
+            const filterer = new Filter(data);
             const online = document.querySelector("#online");
-            const onsite = document.querySelector("#onsite");
+            const onSite = document.querySelector("#onsite");
     
-            online.addEventListener("click", this.filterer.filterByType);
-            onsite.addEventListener("click", this.filterer.filterByType);
-            online.addEventListener("click", filterer.renderAllFilters());
-            onsite.addEventListener("click", filterer.renderAllFilters()); 
-        } */
+            online.addEventListener("click", () => {
+                
+                if (onSite.checked) {
+                    onSite.checked = false;
+                }
+                
+                filterer.filter()
+            });
+
+            onsite.addEventListener("click", () => {
+
+                if (online.checked) {
+                    online.checked = false;
+                }
+
+                filterer.filter();
+            });
+    }
+
 }
