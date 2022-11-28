@@ -21,9 +21,7 @@ async function renderAll(){
         const roomsUl = document.querySelector(".rooms");
         const item = document.createElement("li");
         const content = document.createElement("p");
-
         content.innerText = "\nTitle: " + challenge.title + "\nDescription: " + challenge.description;
-        
         item.appendChild(content);
         roomsUl.appendChild(item);
     });
