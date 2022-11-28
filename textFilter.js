@@ -1,44 +1,91 @@
-const searchInput = document.querySelector('.input-search-keyword'); 
-const out = document.querySelector('.rooms');
+const searchInput = document.querySelector('.input-search-keyword');
+const roomsUl = document.querySelector('.rooms');
 
-// if string empty display all rooms
+
+
+
 
     function search(){
-        
-        const searchString = searchInput.value;
-        console.log(searchString);
-        render(searchInput.value);
-        
-        
-    }      
-    
-    function render(searchString){
-        const data = await APIGet();
+       
 
+        const searchString = searchInput.value;
+       
+        //if string empty display all rooms
+        if(searchString == ''){
+            renderAll();
+        
+        }
+        //if string is not empty render rooms matching the string
+        else{
+            render(searchInput.value);
+        
+        }
+        
+
+    }   
+    async function renderAll(){
+        const data = await APIGet();
+        roomsUl.innerHTML = '';
         data.challenges.forEach(challenge => {
-        if(challenge.description.includes(searchString) || challenge.title.includes(searchString)){
             const roomsUl = document.querySelector(".rooms");
-            //roomsUl.innerHTML = "";
             const item = document.createElement("li");
             const content = document.createElement("p");
+
             content.innerText = "\nTitle: " + challenge.title + "\nDescription: " + challenge.description;
+
             item.appendChild(content);
             roomsUl.appendChild(item);
-       }
-    });
 
+        });
     
-}
+        
+    }   
+
+    function caseSensitive(){
+        
+    }
+
+
+    // if no match show alert
+
+    async function render(searchString){
+        const data = await APIGet();
+        roomsUl.innerHTML = '';
+        data.challenges.forEach(challenge => {
+
+            if(challenge.description.includes(searchString) || challenge.title.includes(searchString)){
+                
+                const roomsUl = document.querySelector(".rooms");
+                const item = document.createElement("li");
+                const content = document.createElement("p");
+                content.innerText = "\nTitle: " + challenge.title + "\nDescription: " + challenge.description;
+                item.appendChild(content);
+                roomsUl.appendChild(item);
+                
+            }        
+        });
+    
+        if(roomsUl.innerHTML == ''){
+            
+            roomsUl.innerHTML = 'no matching rooms';
+        }
+  
+    }
 
     async function APIGet(){
+        
         const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
         const data = await res.json();
         return data;
         
     }
 
+searchInput.addEventListener("keyup", search);
 
-searchInput.addEventListener("change", search());
+//searchInput.addEventListener('keyup', APIGet());
+
+
+
 
 
 
