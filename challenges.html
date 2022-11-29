@@ -54,7 +54,7 @@
                     <div class="part-two">
                         <h3 class="h3-by-rating">By rating</h3>
                         <div class="container-stars">
-                            <ul role="meter" class="rating max-rating" aria-label="rating" arial-valuemin="0"
+                            <ul role="meter" class="rating min-rating" aria-label="rating" arial-valuemin="0"
                                 aria-valuemax="5" aria-valuenow="1" aria-valuetext="1 out of 5">
 
                                 <li class="rating-star active"></li>
@@ -64,7 +64,7 @@
                                 <li class="rating-star"></li>
                             </ul>
                             <p>to</p>
-                            <ul role="meter" class="rating min-rating" aria-label="rating" arial-valuemin="0"
+                            <ul role="meter" class="rating max-rating" aria-label="rating" arial-valuemin="0"
                                 aria-valuemax="5" aria-valuenow="5" aria-valuetext="5 out of 5">
 
                                 <li class="rating-star active"></li>
@@ -78,14 +78,7 @@
 
                     <div class="part-three">
                         <h3 class="h3-by-tags">By tags</h3>
-                        <div class="by-tag-buttons">
-                            <button class="tag-button selected">Web</button>
-                            <button class="tag-button">Linux</button>
-                            <button class="tag-button selected">Cryptography</button>
-                            <button class="tag-button">Coding</button>
-                            <button class="tag-button">Some other tag</button>
-                            <button class="tag-button">A final tag</button>
-                        </div>
+                        <div class="by-tag-buttons"></div>
                     </div>
                 </section>
 
@@ -128,6 +121,8 @@
             </nav>
         </div>
     </footer>
+
+    <!-- Scripts -->
     <script src="app.js"></script>
     <script src="booking.js"></script>
     <script src="displayChallenges.js"></script>
