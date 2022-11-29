@@ -9,7 +9,7 @@
     <title>[ESC] Hacker Escape Rooms</title>
 </head>
 
-<body>
+<body onload="wellHello()">
     <!-- Header & Nav -->
     <div class="sec header">
         <div class="sec-cont">
@@ -34,7 +34,7 @@
         <main class="sec-cont">
             <h1>Our challenges</h1>
 
-            <button class="filter-btn" onclick="displayRooms()">Filter challenges</button>
+            <button class="filter-btn">Filter challenges</button>
 
             <section class="filter">
                 <div class="close-filter"></div>
@@ -129,6 +129,7 @@
         </div>
     </footer>
     <script src="app.js"></script>
+    <script src="displayChallenges.js"></script>
 </body>
 
 </html>
