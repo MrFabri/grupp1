@@ -29,6 +29,7 @@ export class Filter {
         const filerByRating = new FilterByRating();
         const filteredList = { challenges: [],};
 
+        // Checks all filter elements if they are empty, if they all are empty (returning false) load all challenges
         if ( 
             filterByTag.checkDOM() ||
             filterByType.checkDOM() ||
@@ -38,18 +39,18 @@ export class Filter {
 
 
             this.data.challenges.forEach(challenge => {
-                // Checks for each filter if the challenge matches the filter or if all the DOM elements for that filter is empty
+                // Checks for each filter if the challenge matches the filter (returns true) or if all the DOM elements for that filter is empty
                 if (
                     (filterByTag.filter(challenge) || !filterByTag.checkDOM()) &&
                     (filterByType.filter(challenge) || !filterByType.checkDOM()) &&
-                    filerByRating.filter(challenge)
+                    (filerByRating.filter(challenge) || !filerByRating.checkDOM())
                     ) {
 
                     filteredList.challenges.push(challenge);    
                 }
             })
 
-
+            // If any challenge got through the filter, filteredList.length will have at least one challenge and will render that challenge
             if (filteredList.challenges.length > 0 ){
 
                 renderer.renderRooms(filteredList);
@@ -60,6 +61,7 @@ export class Filter {
             }
         
         } else {
+            
             this.data.challenges.forEach(challenge => {
                 filteredList.challenges.push(challenge);
                 renderer.renderRooms(filteredList);
@@ -80,7 +82,7 @@ class Init {
         renderer.renderRooms(data);
         renderer.renderTags(data);
         renderer.renderType(data);
-        renderer.renderRating(data);
+        /* renderer.renderRating(data); */
 
         rating.render(data);
 

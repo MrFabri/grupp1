@@ -29,8 +29,11 @@ export class FilterByTag {
         for (let i=0; i < tagList.length; i++) {
 
             if(challenge.labels.indexOf(tagList[i]) !== -1) {
+
                 result = true;
+
             } else {
+                
                 result = false;
                 break;
             }
@@ -41,8 +44,11 @@ export class FilterByTag {
 
     checkDOM () {
         if(this.tagSelectedList.length > 0) {
+
             return true;
+
         } else {
+
             return false;
         }
     }

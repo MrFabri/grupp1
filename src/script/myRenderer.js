@@ -30,6 +30,7 @@ export class Renderer {
         const tags = [];
 
         data.challenges.forEach(challenge => {
+            
             challenge.labels.forEach(label => tags.push(label))
         });
 
@@ -38,10 +39,13 @@ export class Renderer {
         for (let i = 0; i < tags.length; i++) {
 
             if (tagsBtn.indexOf(tags[i]) === -1) {
+
                 tagsBtn.push(tags[i]);
             };
 
         };
+
+        tagsBtn.sort();
     
         // Renderds tags, adds eventlistner (that runs filterer.filterByTag() when pressed)
         tagsBtn.forEach(tag => {
@@ -54,7 +58,9 @@ export class Renderer {
 
                 if (item.getAttribute("class") === "tag-button selected") {
                     item.classList.remove("selected");
+
                 } else {
+
                     item.classList.add("selected");
                 };
                 
@@ -75,6 +81,7 @@ export class Renderer {
             online.addEventListener("click", () => {
                 
                 if (onSite.checked) {
+
                     onSite.checked = false;
                 }
 
@@ -84,6 +91,7 @@ export class Renderer {
             onSite.addEventListener("click", () => {
 
                 if (online.checked) {
+
                     online.checked = false;
                 }
 

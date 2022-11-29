@@ -1,10 +1,12 @@
 export class FilterByRating {
 
-    filter (challenge) {
-        const minRating = document.querySelectorAll(".rating.min-rating>.rating-star.active").length;
-        const maxRating = document.querySelectorAll(".rating.max-rating>.rating-star.active").length;
+    minRating = document.querySelectorAll(".rating.min-rating>.rating-star.active").length;
+    maxRating = document.querySelectorAll(".rating.max-rating>.rating-star.active").length;
 
-        if (challenge.rating >= minRating && challenge.rating <= maxRating){
+    filter (challenge) {
+        
+
+        if (challenge.rating >= this.minRating && challenge.rating <= this.maxRating){
             
             return true;
         
@@ -15,6 +17,15 @@ export class FilterByRating {
     }
 
     checkDOM () {
-        return true;
+        
+        if(this.minRating > 0 && this.maxRating <= 5) {
+        
+            return true;
+        
+        } else {
+
+            return false;
+
+        }
     }
 }

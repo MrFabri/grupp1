@@ -4,6 +4,7 @@ export class FilterByType {
     onSite = document.querySelector("#onsite");
 
     filter (challenge) {
+
         if (this.online.checked && challenge.type == "online") {
             
             return true;
@@ -18,9 +19,13 @@ export class FilterByType {
     }
 
     checkDOM() {
+
         if (this.online.checked || this.onSite.checked) {
+
             return true;
+
         } else {
+            
             return false;
         }
     }
