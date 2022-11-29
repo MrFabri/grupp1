@@ -33,6 +33,7 @@ li {
 }
 
 .button {
+  cursor: pointer;
   display: block;
   border-radius: 4px;
   padding: 1em 2em;
@@ -430,56 +431,138 @@ header h1 {
   }
 }
 
-.modal {
+.booking {
+  z-index: 100;
   position: fixed;
-  display: none;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(206, 197, 197, 0.418);
+  display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.526);
-}
-.modal > div {
-  width: 80%;
-  height: 50vh;
-  background-color: white;
-  padding: 1rem;
-  position: relative;
-  border: 2px solid #011827;
-  border-radius: 0.5em;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.165);
-}
-.modal > div h3, .modal > div p {
-  pointer-events: none;
-  font-weight: 400;
-}
-.modal > div .date {
-  width: 100%;
-}
-.modal > div .date small, .modal > div .date input {
-  display: block;
-}
-.modal > div .date small {
-  margin-bottom: 0.3em;
-}
-.modal > div .date input {
-  border: 2px solid #011827;
-  border-radius: 0.3em;
-  padding: 1em 2em;
-}
-.modal > div button {
-  position: absolute;
-  padding: 0.5rem 1rem;
-  font-size: 18px;
-  bottom: 0;
-  right: 0;
-  margin: 0 1rem 1rem 0;
-  cursor: pointer;
-  font-weight: 600;
 }
 
+.first-modal,
+.second-modal,
+.third-modal {
+  z-index: 200;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+  animation: modalFadeScaleIn 1s;
+  width: 80%;
+  height: auto;
+  padding: 1em;
+  background-color: white;
+  border-radius: 0.4em;
+}
+.first-modal h1, .first-modal h2,
+.second-modal h1,
+.second-modal h2,
+.third-modal h1,
+.third-modal h2 {
+  margin: 0;
+}
+.first-modal .btn-parent,
+.second-modal .btn-parent,
+.third-modal .btn-parent {
+  position: relative;
+  width: 100%;
+  height: 10rem;
+}
+.first-modal .btn-parent button,
+.second-modal .btn-parent button,
+.third-modal .btn-parent button {
+  padding: 0.5rem 1rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.first-modal label,
+.first-modal input {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.first-modal input {
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  border: 2px solid black;
+}
+
+.second-modal h2 {
+  margin-bottom: 1.5rem;
+}
+.second-modal label {
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+.second-modal label,
+.second-modal input,
+.second-modal select {
+  display: block;
+  font-size: 14px;
+}
+.second-modal input,
+.second-modal select {
+  margin-bottom: 1.3rem;
+}
+.second-modal input, .second-modal select {
+  padding: 0.7em 2em;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  border: 0;
+  outline: 0;
+}
+.second-modal select {
+  cursor: pointer;
+  /* Remove focus outline */
+}
+.second-modal select:focus {
+  outline: none;
+}
+.second-modal select option {
+  color: inherit;
+}
+.second-modal .btn-parent {
+  height: 5rem;
+}
+
+.third-modal {
+  padding: 6rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.third-modal a {
+  margin-top: 1rem;
+  color: #8ACFE5;
+}
+
+@media (min-width: 1000px) {
+  .first-modal,
+  .second-modal,
+  .third-modal {
+    max-width: 40rem;
+  }
+  .second-modal .btn-parent {
+    height: 3rem;
+  }
+  .third-modal {
+    padding: 12rem 0;
+  }
+}
+@keyframes modalFadeScaleIn {
+  from {
+    opacity: 0;
+    scale: 0.95;
+  }
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
 .story {
   display: flex;
   flex-direction: column;
