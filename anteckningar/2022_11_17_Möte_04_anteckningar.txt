@@ -1,0 +1,14 @@
+## Möte 17/11
+
+Vi delade upp uppgiften i tre delar:
+ - Ladda challenge-data från API
+    - Görs av Jaimen och Vedad
+ - Filtrera challenges
+    - Görs av Arash och Ponuts
+ - Boka challenge
+    - Görs av Abdul och Fabricio
+
+Vi ska träffas kl. 09:00 på tisdag nästa vecka där alla går igenom vad de gjort med sin del och hur de tänkt.
+Under tiden kommer vi finnas tillgängliga för varandra på discord ifall problem och funderingar uppstår.
+
+##

@@ -9,7 +9,7 @@
     <title>[ESC] Hacker Escape Rooms</title>
 </head>
 
-<body>
+<body onload = "threeHighestRanked()">
     <!-- Header & Nav -->
     <div class="sec header">
         <div class="sec-cont">
@@ -33,7 +33,7 @@
     <section class="hero">
         <img alt="Hacker in front of screens" src="src/assets/hero.png">
         <div class="hero-cta">
-            <a class="button primary" href="challenges.html">Online challenges</a>
+            <a class="button primary">Online challenges</a>
             <a class="button secondary" href="challenges.html">On-site challenges</a>
         </div>
     </section>
@@ -207,9 +207,9 @@
             </nav>
         </div>
     </footer>
-
-    <script src="app.js" type="module"></script>
-    <script src="src/scripts/booking.js"></script>
+    <script src="booking.js"></script>
+    <script src="app.js"></script>
+    <script src="displayChallenges.js"></script>
 </body>
 
 </html>
