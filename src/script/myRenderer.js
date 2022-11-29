@@ -1,6 +1,12 @@
 import { Filter } from "./filter.js";
 
 export class Renderer {
+    
+    constructor (data) {
+        this.data = data;
+
+        const filter = new Filter(data);
+    }
 
     renderRooms(data) {
             document.querySelector(".rooms").innerHTML = "";
@@ -24,6 +30,7 @@ export class Renderer {
         const tags = [];
 
         data.challenges.forEach(challenge => {
+            
             challenge.labels.forEach(label => tags.push(label))
         });
 
@@ -32,10 +39,13 @@ export class Renderer {
         for (let i = 0; i < tags.length; i++) {
 
             if (tagsBtn.indexOf(tags[i]) === -1) {
+
                 tagsBtn.push(tags[i]);
             };
 
         };
+
+        tagsBtn.sort();
     
         // Renderds tags, adds eventlistner (that runs filterer.filterByTag() when pressed)
         tagsBtn.forEach(tag => {
@@ -48,7 +58,9 @@ export class Renderer {
 
                 if (item.getAttribute("class") === "tag-button selected") {
                     item.classList.remove("selected");
+
                 } else {
+
                     item.classList.add("selected");
                 };
                 
@@ -60,14 +72,31 @@ export class Renderer {
         });
     } 
 
-        /* renderByTag () {
+        renderType (data) {
             // adds eventlistener to ByType checkboxes
+            const filterer = new Filter(data);
             const online = document.querySelector("#online");
-            const onsite = document.querySelector("#onsite");
+            const onSite = document.querySelector("#onsite");
     
-            online.addEventListener("click", this.filterer.filterByType);
-            onsite.addEventListener("click", this.filterer.filterByType);
-            online.addEventListener("click", filterer.renderAllFilters());
-            onsite.addEventListener("click", filterer.renderAllFilters()); 
-        } */
+            online.addEventListener("click", () => {
+                
+                if (onSite.checked) {
+
+                    onSite.checked = false;
+                }
+
+                filterer.filter()
+            });
+
+            onSite.addEventListener("click", () => {
+
+                if (online.checked) {
+
+                    online.checked = false;
+                }
+
+                filterer.filter();
+            });
+    }
+
 }

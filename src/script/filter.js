@@ -1,6 +1,9 @@
 import { MyAPI } from './myApi.js';
 import { Renderer } from './myRenderer.js';
-import { filterByTag } from './filterByTag.js';
+import { FilterByTag } from './filterByTag.js';
+import { FilterByType } from './filterByType.js';
+import { RenderRating } from './renderByRating.js';
+import { FilterByRating } from './filterByRating.js';
 
 export class Filter {
 
@@ -20,31 +23,51 @@ export class Filter {
     */
 
     filter () {
-        const renderer = new Renderer();
+        const renderer = new Renderer(this.data);
+        const filterByTag = new FilterByTag();
+        const filterByType = new FilterByType();
+        const filerByRating = new FilterByRating();
         const filteredList = { challenges: [],};
 
-        this.data.challenges.forEach(challenge => {
+        // Checks all filter elements if they are empty, if they all are empty (returning false) load all challenges
+        if ( 
+            filterByTag.checkDOM() ||
+            filterByType.checkDOM() ||
+            filerByRating.checkDOM()
+            ){
+            
 
-            /* if( filterByTag(challenge) &&
-                filterByText(challenge) && 
-                filterByType(challenge) && 
-                filterByType(challange) )  */
-            if (filterByTag(challenge)) {
 
-                filteredList.challenges.push(challenge);    
+            this.data.challenges.forEach(challenge => {
+                // Checks for each filter if the challenge matches the filter (returns true) or if all the DOM elements for that filter is empty
+                if (
+                    (filterByTag.filter(challenge) || !filterByTag.checkDOM()) &&
+                    (filterByType.filter(challenge) || !filterByType.checkDOM()) &&
+                    (filerByRating.filter(challenge) || !filerByRating.checkDOM())
+                    ) {
+
+                    filteredList.challenges.push(challenge);    
+                }
+            })
+
+            // If any challenge got through the filter, filteredList.length will have at least one challenge and will render that challenge
+            if (filteredList.challenges.length > 0 ){
+
+                renderer.renderRooms(filteredList);
+
+            } else {
+                document.querySelector(".rooms").innerHTML = "";
+                alert("No challenges matches your filter");
             }
-        })
-
-
-        if (filteredList.challenges.length > 0 ){
-
-            renderer.renderRooms(filteredList)
-
-        } else {
-
-            alert("No challenges matches your filter")
-        }
         
+        } else {
+            
+            this.data.challenges.forEach(challenge => {
+                filteredList.challenges.push(challenge);
+                renderer.renderRooms(filteredList);
+            });
+        }
+
     }
 
 }
@@ -54,9 +77,15 @@ class Init {
         const api = new MyAPI();
         const data = await api.getData();
         const renderer = new Renderer();
+        const rating = new RenderRating();
 
         renderer.renderRooms(data);
-        renderer.renderTags(data);    
+        renderer.renderTags(data);
+        renderer.renderType(data);
+        /* renderer.renderRating(data); */
+
+        rating.render(data);
+
     };
 }
 
