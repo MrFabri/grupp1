@@ -1,0 +1,22 @@
+## Möte 25/11
+
+Uppdatering om status för deluppgifterna: 
+Varje person live-shareade eller delade sin skärm, gick igenom sin kod och hur de tänkt. De andra kom med synpunkter och ändringar.
+
+Filter gruppen:
+Pontus: Klar, men att den uppdaterar när man skriver fungerar inte än. Har lite problem med API'n
+Arash: Gjort klart filtereing av tag, men hittade en bug när han live-shareade.
+
+API och challenges gruppen:
+Vedad: Gjort klart korten. Lite css kvar att göra. Om man klickar på online/on-site så kommer man till challenges så är de i-bockade och visar endas de rumen. Fixat så att de visar olika sker för index.html och challenges.html.
+Jaimen: Var med och lyssnade, men redovisade inte. Skrev: "Hej, kan inte stanna men jag har gjort en liten del och jag fortsätta senare med Vedad." 
+
+Modal och boknings gruppen:
+Fabricio: Gjort klart allt med modal och bokningen. 
+	* Ska lägga till att min och max participants ändras dynamiskt i steg 2 på bookings modalen. 
+	* Ändra alerts vi till felmeddelanden på modeln.
+	* Kvar att göra tillsammans, fixa så att modalen syns när man klickar på en "Book this room"-knapp.
+
+Abdul:  Inte närvarande
+
+## Nästa möte och deadline på tisdag kl.16.00.

@@ -9,7 +9,7 @@
     <title>[ESC] Hacker Escape Rooms</title>
 </head>
 
-<body>
+<body onload = "threeHighestRanked()">
     <!-- Header & Nav -->
     <div class="sec header">
         <div class="sec-cont">
@@ -22,8 +22,8 @@
                 <menu class="main-menu">
                     <li class="main-menu-item"><a href="challenges.html">Play online</a></li>
                     <li class="main-menu-item"><a href="challenges.html">Play on-site</a></li>
-                    <li class="main-menu-item"><a href="">The story</a></li>
-                    <li class="main-menu-item"><a href="">Contact us </a></li>
+                    <li class="main-menu-item"><a href="#story">The story</a></li>
+                    <li class="main-menu-item"><a href="#footer">Contact us </a></li>
                 </menu>
             </nav>
         </div>
@@ -33,7 +33,7 @@
     <section class="hero">
         <img alt="Hacker in front of screens" src="src/assets/hero.png">
         <div class="hero-cta">
-            <a class="button primary" href="challenges.html">Online challenges</a>
+            <a class="button primary">Online challenges</a>
             <a class="button secondary" href="challenges.html">On-site challenges</a>
         </div>
     </section>
@@ -137,7 +137,7 @@
     </section>
 
     <!-- Story -->
-    <section class="story">
+    <section class="story" id="story">
         <p>
             Quodsi haberent magnalia inter potentiam et divitias, et non illam
             quidem haec eo spectant haec quoque vos
@@ -177,7 +177,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="sec">
+    <footer class="sec" id="footer">
         <div class="sec-cont">
             <div class="footer-summary">
                 <h2>[Esc] Hacker Escape Rooms</h2>
@@ -190,38 +190,28 @@
             <nav class="footer-sitemap">
                 <h2>Site map</h2>
                 <menu>
-                    <li class="misc-link"><a href="">The Story</a></li>
-                    <li class="misc-link"><a href="">Contact Us</a></li>
-                    <li class="misc-link"><a href="">Legal</a></li>
-                    <li class="play-link"><a href="">Play online</a></li>
-                    <li class="play-link"><a href="">Play on-site</a></li>
+                    <li class="misc-link"><a href="#story">The Story</a></li>
+                    <li class="misc-link"><a href="#footer">Contact Us</a></li>
+                    <li class="misc-link"><a href="#footer">Legal</a></li>
+                    <li class="play-link"><a href="#footer">Play online</a></li>
+                    <li class="play-link"><a href="#footer">Play on-site</a></li>
                 </menu>
             </nav>
             <nav class="footer-social">
                 <h2>Follow us on</h2>
                 <menu>
-                    <li><a href="">Facebook</a></li>
-                    <li><a href="">Instagram</a></li>
-                    <li><a href="">Twitter</a></li>
+                    <li><a href="#footer">Facebook</a></li>
+                    <li><a href="#footer">Instagram</a></li>
+                    <li><a href="#footer">Twitter</a></li>
                 </menu>
             </nav>
         </div>
     </footer>
 
-    <!-- Popup -->
-    <section class="modal">
-        <div>
-            <h3>Book room "titel genereras med js"</h3>
-            <p>What date would you like to come?</p>
-            <div class="date">
-                <small>Date</small>
-                <input type="Date"> <!-- ev. skriva en funktion som hämtar den första lediga tiden och fyller i value="" sätt även min="" till första leiga datum occh max="" till om 2 år från dagen datum-->
-            </div>
-            <button class="button primary">Search available times</button>
-        </div>
-    </section>
-
-    <script src="app.js"></script>
+    <!-- Scripts -->
+    <script src="app.js" type="module"></script>
+    <script src="booking.js"></script>
+    <script src="displayChallenges.js"></script>
 </body>
 
 </html>

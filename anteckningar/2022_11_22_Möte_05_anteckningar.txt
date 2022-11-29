@@ -1,0 +1,21 @@
+## Möte 22/11
+
+Status för varje grupp:
+Filter gruppen:
+Pontus: Har inte hunnit med text filtreringen än, men updaterar när man skriver i input fältet och kan skicka ut det. Har haft lite problem med API'n.
+Arash: Har inte lyckats med själva filtreringen än, men har fixat så att labels-tagarna laddas från API'n och satt eventlistners på de.
+
+API och challenges gruppen:
+Vedad: Har gjort en del på challenges. Har gjort så att när man trycker på knapparna i index.html så  kommer man till challenges sidan med checkboxen ifylld i filtret. Har inte kunnat få kontakt med Jaimen och inte kunnat delat upp vem som ska göra vad. 
+Jaimen: Har inte börjat koda än. 
+
+Modal och boknings gruppen:
+Fabricio: Har gjort klart nästan allt med bokningen, han har inte fått tag på Abdul på nästan en vecka.
+Abdul: Inte närvarande på mötet.
+
+Vedad och Jaimen, ska även fixa de nya ikonerna på knapparna och på room-challenges.
+
+För oss som inte är klara med våra deluppgifter, har vi satt fredag som deadline för att bli klara. Så att vi har nästa vecka på oss att integerara alla delar till en fungerande sida. Om någon inte hinner bli klar så ska vi som grupp hjälpta till att göra klart.
+Fabricio ska försöka få kontakt med Abdul.
+
+Nästa möte: fredag 13:00.
