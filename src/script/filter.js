@@ -4,11 +4,14 @@ import { FilterByTag } from './filterByTag.js';
 import { FilterByType } from './filterByType.js';
 import { RenderRating } from './renderByRating.js';
 import { FilterByRating } from './filterByRating.js';
+import { FilterByText } from './filterByText.js';
+//import { createChallenge } from './displayChallenges.js';
 
 export class Filter {
 
     constructor (data) {
         this.data = data;
+        console.log(this.data + "constructoir");
     }
 
     /* 
@@ -23,17 +26,20 @@ export class Filter {
     */
 
     filter () {
+        /* console.log(this.data + "filter"); */
         const renderer = new Renderer(this.data);
         const filterByTag = new FilterByTag();
         const filterByType = new FilterByType();
-        const filerByRating = new FilterByRating();
+        const filterByRating = new FilterByRating();
+        const filterByText = new FilterByText();
         const filteredList = { challenges: [],};
 
         // Checks all filter elements if they are empty, if they all are empty (returning false) load all challenges
         if ( 
             filterByTag.checkDOM() ||
             filterByType.checkDOM() ||
-            filerByRating.checkDOM()
+            filterByRating.checkDOM() ||
+            filterByText.checkDOM() 
             ){
             
 
@@ -43,10 +49,12 @@ export class Filter {
                 if (
                     (filterByTag.filter(challenge) || !filterByTag.checkDOM()) &&
                     (filterByType.filter(challenge) || !filterByType.checkDOM()) &&
-                    (filerByRating.filter(challenge) || !filerByRating.checkDOM())
+                    (filterByRating.filter(challenge) || !filterByRating.checkDOM()) &&
+                    (filterByText.filter(challenge) || !filterByText.checkDOM())
                     ) {
 
                     filteredList.challenges.push(challenge);    
+                    //createChallenge(challenge);
                 }
             })
 
@@ -56,7 +64,7 @@ export class Filter {
                 renderer.renderRooms(filteredList);
 
             } else {
-                document.querySelector(".rooms").innerHTML = "";
+                //document.querySelector(".rooms").innerHTML = "";
                 alert("No challenges matches your filter");
             }
         
@@ -79,7 +87,8 @@ class Init {
         const renderer = new Renderer();
         const rating = new RenderRating();
 
-        renderer.renderRooms(data);
+        
+        //renderer.renderRooms(data);
         renderer.renderTags(data);
         renderer.renderType(data);
         /* renderer.renderRating(data); */

@@ -1,0 +1,445 @@
+{
+  "challenges": [
+    {
+      "id": 1,
+      "type": "onsite",
+      "title": "Network in the night",
+      "description": "Bring back the skills of the past",
+      "minParticipants": 1,
+      "maxParticipants": 4,
+      "rating": 2.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "web",
+        "coding"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "onsite",
+      "title": "Project: X online",
+      "description": "Hackers of the world, unite",
+      "minParticipants": 2,
+      "maxParticipants": 10,
+      "rating": 1,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "linux",
+        "electronics",
+        "coding"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "online",
+      "title": "Hacking 1994",
+      "description": "Take the ultimate challenge in this ultimate challenge",
+      "minParticipants": 2,
+      "maxParticipants": 3,
+      "rating": 3.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "ssh",
+        "ctf"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "onsite",
+      "title": "Revolution 3000",
+      "description": "Bring back the skills of the past",
+      "minParticipants": 1,
+      "maxParticipants": 6,
+      "rating": 4.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "linux",
+        "phreaking",
+        "ctf"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "onsite",
+      "title": "Room demystified",
+      "description": "Go out into space and back without leaving your computer",
+      "minParticipants": 2,
+      "maxParticipants": 6,
+      "rating": 3,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "coding",
+        "javascript",
+        "hacking",
+        "javascript"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "online",
+      "title": "Game in the machine",
+      "description": "Do you have the skills to survive?",
+      "minParticipants": 2,
+      "maxParticipants": 9,
+      "rating": 2.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "javascript",
+        "ctf",
+        "ssh"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "online",
+      "title": "Binary dreams for hackers",
+      "description": "Take the ultimate challenge in this ultimate challenge",
+      "minParticipants": 1,
+      "maxParticipants": 8,
+      "rating": 0.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "linux",
+        "bash",
+        "ssh"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "online",
+      "title": "Shell in binary",
+      "description": "Hackers of the world, unite",
+      "minParticipants": 2,
+      "maxParticipants": 6,
+      "rating": 3,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "javascript",
+        "electronics"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "online",
+      "title": "Room 1994",
+      "description": "Bring back the skills of the past",
+      "minParticipants": 2,
+      "maxParticipants": 7,
+      "rating": 3.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "linux",
+        "coding",
+        "electronics",
+        "ssh"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "onsite",
+      "title": "Binary dreams 2000",
+      "description": "Take the ultimate challenge in this ultimate challenge",
+      "minParticipants": 1,
+      "maxParticipants": 2,
+      "rating": 1.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "phreaking",
+        "hacking"
+      ]
+    },
+    {
+      "id": 11,
+      "type": "onsite",
+      "title": "Revolution 2.0",
+      "description": "Go out into space and back without leaving your computer",
+      "minParticipants": 2,
+      "maxParticipants": 10,
+      "rating": 0,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "phreaking",
+        "phreaking"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "onsite",
+      "title": "Hacking from satellite to satellite",
+      "description": "Take over the world with code",
+      "minParticipants": 2,
+      "maxParticipants": 5,
+      "rating": 1.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "electronics",
+        "javascript"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "onsite",
+      "title": "Project: X 3000",
+      "description": "Bring back the skills of the past",
+      "minParticipants": 1,
+      "maxParticipants": 2,
+      "rating": 1.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "linux",
+        "web"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "onsite",
+      "title": "Network online",
+      "description": "Hackers of the world, unite",
+      "minParticipants": 2,
+      "maxParticipants": 2,
+      "rating": 3,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "javascript",
+        "phreaking",
+        "bash"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "online",
+      "title": "Room in binary",
+      "description": "Take the ultimate challenge in this ultimate challenge",
+      "minParticipants": 2,
+      "maxParticipants": 11,
+      "rating": 4.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "linux",
+        "ssh"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "online",
+      "title": "Code from satellite to satellite",
+      "description": "Bring back the skills of the past",
+      "minParticipants": 1,
+      "maxParticipants": 8,
+      "rating": 2.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "bash",
+        "javascript",
+        "coding"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "onsite",
+      "title": "Shell 1994",
+      "description": "Go out into space and back without leaving your computer",
+      "minParticipants": 2,
+      "maxParticipants": 4,
+      "rating": 2,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "hacking",
+        "coding",
+        "coding",
+        "bash"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "onsite",
+      "title": "Hacking in space",
+      "description": "Do you have the skills to survive?",
+      "minParticipants": 2,
+      "maxParticipants": 11,
+      "rating": 4.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "phreaking",
+        "linux",
+        "ctf"
+      ]
+    },
+    {
+      "id": 19,
+      "type": "online",
+      "title": "Game on Windows",
+      "description": "Take the ultimate challenge in this ultimate challenge",
+      "minParticipants": 1,
+      "maxParticipants": 6,
+      "rating": 1.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "phreaking",
+        "coding",
+        "web"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "onsite",
+      "title": "Code in space",
+      "description": "Hackers of the world, unite",
+      "minParticipants": 2,
+      "maxParticipants": 8,
+      "rating": 1,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "linux",
+        "javascript"
+      ]
+    },
+    {
+      "id": 21,
+      "type": "online",
+      "title": "Hacking for hackers",
+      "description": "Bring back the skills of the past",
+      "minParticipants": 2,
+      "maxParticipants": 5,
+      "rating": 2.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "web",
+        "phreaking",
+        "ssh",
+        "hacking"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "online",
+      "title": "Network 1994",
+      "description": "Take the ultimate challenge in this ultimate challenge",
+      "minParticipants": 1,
+      "maxParticipants": 4,
+      "rating": 3.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "ssh",
+        "ssh"
+      ]
+    },
+    {
+      "id": 23,
+      "type": "online",
+      "title": "Mystery demystified",
+      "description": "Go out into space and back without leaving your computer",
+      "minParticipants": 2,
+      "maxParticipants": 8,
+      "rating": 1,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "web",
+        "coding"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "online",
+      "title": "Network in binary",
+      "description": "Take over the world with code",
+      "minParticipants": 2,
+      "maxParticipants": 7,
+      "rating": 4.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "linux",
+        "electronics"
+      ]
+    },
+    {
+      "id": 25,
+      "type": "online",
+      "title": "Hacking 2000",
+      "description": "Bring back the skills of the past",
+      "minParticipants": 1,
+      "maxParticipants": 10,
+      "rating": 0.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "coding",
+        "ssh"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "online",
+      "title": "Challenge in the night",
+      "description": "Hackers of the world, unite",
+      "minParticipants": 2,
+      "maxParticipants": 4,
+      "rating": 0,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "ctf",
+        "linux",
+        "phreaking"
+      ]
+    },
+    {
+      "id": 27,
+      "type": "onsite",
+      "title": "Room in space",
+      "description": "Take the ultimate challenge in this ultimate challenge",
+      "minParticipants": 2,
+      "maxParticipants": 9,
+      "rating": 0.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "ctf",
+        "coding"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "onsite",
+      "title": "Mystery from satellite to satellite",
+      "description": "Bring back the skills of the past",
+      "minParticipants": 1,
+      "maxParticipants": 10,
+      "rating": 0.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "javascript",
+        "hacking",
+        "javascript"
+      ]
+    },
+    {
+      "id": 29,
+      "type": "online",
+      "title": "Intelligence 2.0",
+      "description": "Go out into space and back without leaving your computer",
+      "minParticipants": 2,
+      "maxParticipants": 2,
+      "rating": 1,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "javascript",
+        "ctf",
+        "ssh",
+        "linux"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "online",
+      "title": "Intelligence 2000",
+      "description": "Do you have the skills to survive?",
+      "minParticipants": 2,
+      "maxParticipants": 3,
+      "rating": 1.5,
+      "image": "https://placekitten.com/640/480",
+      "labels": [
+        "bash",
+        "ssh",
+        "javascript"
+      ]
+    }
+  ]
+}

@@ -101,16 +101,16 @@ function wellHello() {
     if (document.cookie == "online") {
         console.log("jag visar online");
         displayOnlineRooms();
-        document.querySelector("input#online").checked = true;
+        //document.querySelector("input#online").checked = true;
     } else if (document.cookie == "offline") {
         console.log("jag visar offline");
         displayOnSiteRooms();
-        document.querySelector("input#onsite").checked = true;
+        //document.querySelector("input#onsite").checked = true;
     } else {
         console.log("jag visar alla");
         displayAllRooms();
-        document.querySelector("input#online").checked = true;
-        document.querySelector("input#onsite").checked = true;
+        //document.querySelector("input#online").checked = true;
+        //document.querySelector("input#onsite").checked = true;
     }
     document.cookie = "";
 
@@ -135,6 +135,8 @@ function wellHello() {
 const main = document.querySelector("main");
 const roomSection = document.createElement("section");
 const challengesHtmlList = document.createElement("ul");
+
+challengesHtmlList.setAttribute('class', 'rooms');
 challengesHtmlList.style.display = "flex";
 challengesHtmlList.style.flexWrap = "wrap";
 challengesHtmlList.style.justifyContent = "space-between";
@@ -193,7 +195,7 @@ async function displayOnSiteRooms() {
 
 // Creates, styles and adds a challenge card to a <li> element. Returns the <li> element.
 
-function createChallenge(challenge) {
+export function createChallenge(challenge) {
     const challengeItem = document.createElement("li");
     const roomImage = document.createElement("img");
     roomImage.src = challenge.image;
@@ -280,3 +282,5 @@ function styleCard(challengeCard) {
     challengeCard.style.paddingBottom = "0.5em";
     challengeCard.style.boxShadow = "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px";
 }
+
+wellHello();

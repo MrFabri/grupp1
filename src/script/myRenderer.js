@@ -5,10 +5,15 @@ export class Renderer {
     constructor (data) {
         this.data = data;
 
-        const filter = new Filter(data);
+/*         console.log(data + "render construcit");
+        const filter = new Filter(data); */
     }
 
     renderRooms(data) {
+        const bajs = new Filter(data);
+        const searchInput = document.querySelector('.input-search-keyword');
+        searchInput.addEventListener("keyup", bajs.filter);
+
             document.querySelector(".rooms").innerHTML = "";
 
             data.challenges.forEach(challenge => {
@@ -26,8 +31,12 @@ export class Renderer {
 
     // Renders tag buttons
     renderTags(data) {
-        const filterer = new Filter(data);
+        console.log(data + "renderTags");
+        const bajs = new Filter(data);
+        
         const tags = [];
+        // fix lates
+
 
         data.challenges.forEach(challenge => {
             
@@ -64,7 +73,7 @@ export class Renderer {
                     item.classList.add("selected");
                 };
                 
-                filterer.filter();
+                bajs.filter();
             });
 
             tagsDiv.appendChild(item);
@@ -85,7 +94,7 @@ export class Renderer {
                     onSite.checked = false;
                 }
 
-                filterer.filter()
+                filterer.filter();
             });
 
             onSite.addEventListener("click", () => {
