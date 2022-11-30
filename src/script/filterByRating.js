@@ -7,7 +7,7 @@ export class FilterByRating {
         
 
         if ((challenge.rating >= this.minRating) && (challenge.rating <= this.maxRating)){
-            console.log("minRating: " + this.minRating + " challenge rating: " + challenge.rating + "maxRating: " + this.maxRating);
+            
             return true;
         
         } else {
