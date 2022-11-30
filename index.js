@@ -14,8 +14,7 @@ class Init {
         mainNavToggle.addEventListener('click', () => {
         mainNav.classList.toggle('open');
         });
-        console.log("ping");
-        console.log(threeHighestRanked(data));
+        
         displayAllRooms(threeHighestRanked(data), "i");
     };
 }
