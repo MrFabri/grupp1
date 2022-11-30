@@ -12,10 +12,14 @@ function createChallenge(challenge) {
     roomTitle.textContent = challenge.title;
     roomTitle.classList.add("challenge-title");
     challengeItem.appendChild(roomTitle);
-    
+
     createStars(challengeItem, challenge.rating);
 
-    participants.textContent = challenge.minParticipants + "-" + challenge.maxParticipants + " participants";
+    if (challenge.minParticipants == challenge.maxParticipants) {
+        participants.textContent = challenge.maxParticipants + " participants";
+    } else {
+        participants.textContent = challenge.minParticipants + "-" + challenge.maxParticipants + " participants";
+    }
     participants.classList.add("challenge-meta");
     challengeItem.appendChild(participants);
 
@@ -33,9 +37,13 @@ function createStars(challengeCard, rating) {
     stars.classList.toggle("rating");
     for (let i = 0; i < 5; i++) {
         const star = document.createElement("li");
-
         if (i < rating) {
-            star.className = "rating-star active";
+            if (i == Math.floor(rating)){
+                star.classList.add("half-star");
+            } else {
+                star.classList.add("rating-star", "active");
+            }
+            //  
         } else {
             star.classList.toggle("rating-star");
         }
@@ -44,12 +52,20 @@ function createStars(challengeCard, rating) {
     challengeCard.appendChild(stars);
 }
 
+function wholeOrNot(number) {
+    let result = (n - Math.floor(n)) !== 0;
+    if (result)
+        return 'Number has a decimal place.';
+    else
+        return 'It is a whole number.';
+}
+
 function createButton(challengeCard, challengeType, challangeTitle, challengeId, min, max) {
     const button = document.createElement("button");
 
     if (challengeType == "onsite") {
         button.textContent = "Book this room";
-        button.classList.add("button", "secondery");
+        button.classList.add("button", "secondary");
     } else {
         button.textContent = "Take challenge online";
         button.classList.add("button", "primary");
