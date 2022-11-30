@@ -57,6 +57,7 @@ export class Filter {
 
             // If any challenge got through the filter, filteredList.length will have at least one challenge and will render that challenge
             if (filteredList.challenges.length > 0 ){
+    
                 filterNoMatch.innerText = "";
                 displayAllRooms(filteredList, "c");
 
@@ -72,6 +73,7 @@ export class Filter {
 
                 filteredList.challenges.push(challenge);  
             });
+
             displayAllRooms(filteredList, "c");
 
         }

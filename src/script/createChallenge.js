@@ -72,7 +72,7 @@ export function displayAllRooms(data, page) {
         challengesHtmlList = document.querySelector(".challenges-list");
 
     } else {
-        
+
         alert("Error at displayAllRooms in createChallenge.js. page != c/i!!")
     }
 
@@ -81,4 +81,5 @@ export function displayAllRooms(data, page) {
     data.challenges.forEach(challenge => {
         challengesHtmlList.appendChild(createChallenge(challenge));
     });
+
 }
