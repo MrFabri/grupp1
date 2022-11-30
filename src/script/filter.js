@@ -83,11 +83,10 @@ class Init {
         const renderer = new Renderer();
         const rating = new RenderRating();
 
-        renderer.renderRooms(data);
+        // Remove at succesfull merge and usage of new displayrenderer
+        /* renderer.renderRooms(data); */
         renderer.renderTags(data);
         renderer.renderType(data);
-        /* renderer.renderRating(data); */
-
         rating.render(data);
 
     };

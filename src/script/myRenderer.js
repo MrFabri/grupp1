@@ -4,11 +4,9 @@ export class Renderer {
     
     constructor (data) {
         this.data = data;
-
-        const filter = new Filter(data);
     }
 
-    renderRooms(data) {
+/*     renderRooms(data) {
             document.querySelector(".rooms").innerHTML = "";
 
             data.challenges.forEach(challenge => {
@@ -22,12 +20,26 @@ export class Renderer {
             item.classList.add("challenge-item");
             roomsUl.appendChild(item);
         });
-    }
+    } */
 
     // Renders tag buttons
     renderTags(data) {
         const filterer = new Filter(data);
         const tags = [];
+
+        const filterBtn = document.querySelector(".filter-btn");
+        const filterBox = document.querySelector(".filter");
+        const filterCloseBtn = document.querySelector(".close-filter");
+
+        filterBtn.addEventListener("click", () => {
+            filterBtn.style.display = "none";
+            filterBox.style.display = "block";
+        });
+
+        filterCloseBtn.addEventListener("click", () => {
+            filterBox.style.display = "none";
+            filterBtn.style.display = "block";
+        })
 
         const searchInput = document.querySelector('.input-search-keyword');
         searchInput.addEventListener("keyup", () => {
