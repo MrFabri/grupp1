@@ -133,15 +133,7 @@ function wellHello() {
 
 // Creates a section that is containing a list that WILL display the challenges (depending on what challenges). 
 
-const main = document.querySelector("main");
-const roomSection = document.createElement("section");
-roomSection.classList.add("challenges");
-const challengesHtmlList = document.createElement("ul");
-challengesHtmlList.classList.add("challenge-list");
-challengesHtmlList.style.display = "flex";
-challengesHtmlList.style.flexWrap = "wrap";
-challengesHtmlList.style.alignContent = "center";
-challengesHtmlList.style.listStyle = "none";
+
 
 
 // Shows all the challenge rooms (both online/onsite) 
@@ -292,4 +284,39 @@ function styleCard(challengeCard) {
     challengeCard.style.borderRadius = "4px";
     challengeCard.style.paddingBottom = "0.5em";
     challengeCard.style.boxShadow = "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px";
+}
+
+
+
+function doIt() {
+    if (document.location == "https://mrfabri.github.io/esc-grupp1/challenges.html") {
+        const listElements = document.querySelectorAll("section > ul > li");
+        if (window.innerWidth < 1000) {
+            for (const element of listElements) {
+                element.style.width = "auto";
+                element.style.margin = "auto";
+                element.style.alignContent = "center";
+            }
+        } else {
+            for (const element of listElements) {
+                element.style.width = "calc(95%/3)";
+                element.style.maxWidth = "400px";
+                element.style.margin = "0";
+                element.style.marginBottom = "2em";
+                challengesHtmlList.style.justifyContent = "space-between";
+                //  challengesHtmlList.lastChild.style.marginRight = "auto";
+                if (listElements.length > 3 && listElements[listElements.length - 1] === element) {
+                    listElements[listElements.length - 2].style.marginLeft = "0";
+                    listElements[listElements.length - 2].style.marginRight = "0";
+                    listElements[listElements.length - 1].style.marginRight = "auto";
+                    if (!listElements.length % 2 == 0) {
+                        listElements[listElements.length - 1].style.marginLeft = "2.5%";
+                    } else {
+                        listElements[listElements.length - 1].style.marginLeft = "0%";
+                    }
+                }
+                //   challengesHtmlList.lastChild.style.paddingLeft = "2.5%";
+            }
+        }
+    }
 }

@@ -9,7 +9,7 @@
     <title>[ESC] Hacker Escape Rooms</title>
 </head>
 
-<body onload="wellHello()">
+<body>
     <!-- Header & Nav -->
     <div class="sec header">
         <div class="sec-cont">
@@ -54,18 +54,16 @@
                     <div class="part-two">
                         <h3 class="h3-by-rating">By rating</h3>
                         <div class="container-stars">
-                            <ul role="meter" class="rating min-rating" aria-label="rating" arial-valuemin="0"
-                                aria-valuemax="5" aria-valuenow="1" aria-valuetext="1 out of 5">
+                            <ul role="meter" class="rating min-rating">
 
-                                <li class="rating-star active"></li>
+                                <li class="rating-star"></li>
                                 <li class="rating-star"></li>
                                 <li class="rating-star"></li>
                                 <li class="rating-star"></li>
                                 <li class="rating-star"></li>
                             </ul>
                             <p>to</p>
-                            <ul role="meter" class="rating max-rating" aria-label="rating" arial-valuemin="0"
-                                aria-valuemax="5" aria-valuenow="5" aria-valuetext="5 out of 5">
+                            <ul role="meter" class="rating max-rating">
 
                                 <li class="rating-star active"></li>
                                 <li class="rating-star active"></li>
@@ -86,6 +84,13 @@
                     <h3 class="h3-search-keyword">Or type to search for keyword</h3>
                     <input class="input-search-keyword" type="text" placeholder="Start typing to filter">
                 </section>
+            </section>
+
+            <section class="part-three">
+                <h2 class="filter-no-match"></h2>
+                <ul class="challenges-list">
+                </ul>
+
             </section>
         </main>
     </div>
@@ -123,9 +128,11 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="app.js"></script>
+    <!--     <script src="app.js"></script>
+    
+    <script src="/src/script/displayChallenges.js"></script> -->
+    <script src="challenges.js" type="module"></script>
     <script src="/src/script/booking.js"></script>
-    <script src="/src/script/displayChallenges.js"></script>
 
 </body>
 

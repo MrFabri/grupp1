@@ -9,6 +9,7 @@
 }
 
 .challenge-list {
+    list-style-type: none;
     display: flex;
     overflow-x: scroll;
     -ms-overflow-style: none;  /* IE and Edge */
@@ -67,4 +68,32 @@
 .challenges-cta {
     @include responsive-ctas;
     margin: 4rem 3rem;
+}
+
+// Challenges /challenges.html
+.challenges-list  {
+    margin-top: 3em;
+    margin-bottom: 3em;
+    display: grid;
+    width: 100%;
+    height: auto;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 0;
+    row-gap: 1rem;
+    place-items: center;
+
+    .challenge-item {
+        margin: 0;
+        min-width: unset;
+        max-width: 400px;
+    }
+}
+@media (min-width: $bp-medium) {
+    .challenges-list {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        column-gap: 1rem;
+        row-gap: 1rem;
+        place-items: unset;
+    }
 }

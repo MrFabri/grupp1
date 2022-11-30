@@ -74,6 +74,117 @@ li {
   background-image: url("../../src/assets/star.svg");
 }
 
+.challenges {
+  margin: 3rem 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.challenges h2 {
+  text-align: center;
+}
+
+.challenge-list {
+  list-style-type: none;
+  display: flex;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.challenge-list::-webkit-scrollbar { /* Webkit */
+  display: none;
+}
+
+.challenge-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-width: 360px;
+  border-radius: 4px;
+  margin: 1em;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.challenge-item .challenge-title,
+.challenge-item .challenge-description,
+.challenge-item .rating,
+.challenge-item .challenge-meta,
+.challenge-item .button {
+  margin: 0.5rem;
+}
+.challenge-item .challenge-image {
+  grid-column: span 2;
+}
+.challenge-item .challenge-title {
+  grid-column: span 2;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 0.8em;
+  margin-bottom: 0;
+}
+.challenge-item .challenge-meta {
+  text-align: right;
+}
+.challenge-item .challenge-description {
+  grid-column: span 2;
+}
+.challenge-item .button {
+  grid-column: 2/3;
+  font-size: 0.7em;
+  padding: 1em;
+}
+
+.challenges-cta {
+  display: flex;
+  flex-direction: column-reverse;
+  margin: 1em 3em;
+  margin: 4rem 3rem;
+}
+.challenges-cta .button.primary {
+  background-color: transparent;
+  color: #36769D;
+  text-decoration: underline;
+  margin: 1em 0;
+}
+@media (min-width: 700px) {
+  .challenges-cta {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1em;
+  }
+  .challenges-cta .button.primary {
+    background-color: #E3170A;
+    margin: 0;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.challenges-list {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 0;
+  row-gap: 1rem;
+  place-items: center;
+}
+.challenges-list .challenge-item {
+  margin: 0;
+  min-width: unset;
+  max-width: 400px;
+}
+
+@media (min-width: 700px) {
+  .challenges-list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    place-items: unset;
+  }
+}
 body {
   width: 100%;
   margin: 0;
@@ -533,6 +644,11 @@ main .filter-btn {
     width: 89%;
   }
 }
+.filter-no-match {
+  margin-top: 100px;
+  text-align: center;
+}
+
 footer {
   background-color: #011827;
   color: white;

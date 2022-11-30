@@ -1,9 +1,7 @@
-import { MyAPI } from './myApi.js';
-import { Renderer } from './myRenderer.js';
 import { FilterByTag } from './filterByTag.js';
 import { FilterByType } from './filterByType.js';
-import { RenderRating } from './renderByRating.js';
 import { FilterByRating } from './filterByRating.js';
+import { displayAllRooms } from './createChallenge.js';
 
 export class Filter {
 
@@ -23,11 +21,13 @@ export class Filter {
     */
 
     filter () {
-        const renderer = new Renderer(this.data);
+        /* const renderer = new Renderer(this.data); */
         const filterByTag = new FilterByTag();
         const filterByType = new FilterByType();
         const filerByRating = new FilterByRating();
         const filteredList = { challenges: [],};
+        const filterNoMatch = document.querySelector(".filter-no-match");
+
 
         // Checks all filter elements if they are empty, if they all are empty (returning false) load all challenges
         if ( 
@@ -45,49 +45,33 @@ export class Filter {
                     (filterByType.filter(challenge) || !filterByType.checkDOM()) &&
                     (filerByRating.filter(challenge) || !filerByRating.checkDOM())
                     ) {
-
+                    
                     filteredList.challenges.push(challenge);    
                 }
             })
 
             // If any challenge got through the filter, filteredList.length will have at least one challenge and will render that challenge
             if (filteredList.challenges.length > 0 ){
-
-                renderer.renderRooms(filteredList);
+                filterNoMatch.innerText = "";
+                displayAllRooms(filteredList);
 
             } else {
-                document.querySelector(".rooms").innerHTML = "";
-                alert("No challenges matches your filter");
+
+                document.querySelector(".challenges-list").innerHTML = "";
+                filterNoMatch.innerText = "No challenges matches your filter";
             }
         
         } else {
             
             this.data.challenges.forEach(challenge => {
-                filteredList.challenges.push(challenge);
-                renderer.renderRooms(filteredList);
+
+                filteredList.challenges.push(challenge);  
             });
+
+            displayAllRooms(filteredList);
+
         }
 
     }
 
 }
-
-class Init {
-    async init () {
-        const api = new MyAPI();
-        const data = await api.getData();
-        const renderer = new Renderer();
-        const rating = new RenderRating();
-
-        renderer.renderRooms(data);
-        renderer.renderTags(data);
-        renderer.renderType(data);
-        /* renderer.renderRating(data); */
-
-        rating.render(data);
-
-    };
-}
-
-const start = new Init();
-start.init();
