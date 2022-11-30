@@ -617,6 +617,9 @@ main .filter-btn {
   column-gap: 12rem;
   position: relative;
 }
+.filter h3 {
+  font-size: 1.4rem;
+}
 .filter .close-filter {
   top: 0;
   right: 0;
@@ -632,9 +635,13 @@ main .filter-btn {
   filter: invert(100%);
   cursor: pointer;
 }
-.filter > section, .filter .h2-filter-challenges {
+.filter > section {
+  font-size: 1.8rem;
   padding: 1rem;
   margin: 0;
+}
+.filter .h2-filter-challenges {
+  padding: 1rem;
 }
 .filter .h2-filter-challenges {
   padding-bottom: 0;
@@ -646,12 +653,10 @@ main .filter-btn {
 .filter .by-ctn .part-one, .filter .by-ctn .part-two, .filter .by-ctn .part-three {
   margin-bottom: 2rem;
 }
-.filter .by-ctn .part-one h3 {
-  /* margin-top: 0;
-  padding: 0; */
-}
 .filter .by-ctn .part-one form label {
   display: block;
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
 }
 .filter .by-ctn .part-two > div {
   display: flex;
@@ -667,8 +672,8 @@ main .filter-btn {
 .filter .by-ctn .part-two .rating-star {
   cursor: pointer;
 }
-.filter .by-ctn .part-two p {
-  margin: 0px;
+.filter .by-ctn .part-two .container-stars p {
+  font-size: 1.3rem;
 }
 .filter .part-three .tag-button {
   margin: 3px 0;
@@ -681,14 +686,20 @@ main .filter-btn {
   margin-top: 0;
 }
 .filter .search-cont input {
-  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  padding: 0.8rem 2rem;
   border-radius: 0.2rem;
   border: 1px solid #011827;
+  outline: none;
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 700px) {
+  .filter .h2-filter-challenges {
+    padding-left: 2rem;
+  }
   .filter section.by-ctn {
-    margin-top: 50px;
+    margin-top: 1rem;
     display: flex;
   }
   .filter section.by-ctn .part-one, .filter section.by-ctn .part-two, .filter section.by-ctn .part-three {
@@ -706,10 +717,17 @@ main .filter-btn {
     padding: 0px;
   }
   .filter section.search-cont {
-    align-self: center;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .filter section.search-cont .h3-search-keyword {
+    width: auto;
   }
   .filter section.search-cont .input-search-keyword {
-    width: 89%;
+    width: 78%;
   }
 }
 .filter-no-match {
