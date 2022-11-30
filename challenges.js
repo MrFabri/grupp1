@@ -16,13 +16,10 @@ class Init {
         mainNav.classList.toggle('open');
         });
         
-
         const rating = new RenderRating();
-
         rating.render(data);
         myRenderer(data);
-
-        displayAllRooms(data);
+        displayAllRooms(data, "c");
     };
 }
 

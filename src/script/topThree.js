@@ -1,28 +1,28 @@
-
-
 export function threeHighestRanked(data) {
-    const topThreeInIndex = document.querySelectorAll("section.challenges > ul > li");
-    let topThreeByRating = [];
-    
-    
-    data.challenges.forEach(challenge => {
-        if (challenge.rating > 4 && topThreeByRating.length < 3) {
-            topThreeByRating.push(challenge);
-        }
-    })
-    if (topThreeByRating.length < 3) {
-        data.challenges.forEach(challenge => {
-            if (challenge.rating > 3 && challenge.rating <= 4) {
-                topThreeByRating.push(challenge);
-            }
-        })
+    sort(data.challenges);
+    const topThree = { challenges: [],}
+
+    for (let i = 0; i < 3; i++) {
+        topThree.challenges.push(data.challenges[i]);        
     }
-    for (let i = 0; i < topThreeByRating.length; i++) {
-        changeCardContent(topThreeInIndex[i], topThreeByRating[i]);
-    }
+
+    return topThree;
 }
 
-export function sortTopThree (data) {
-    data.challenges.sort(function(a, b){return a-b});
-    console.log(data);
+function sort(challenges) {
+    let length = challenges.length;
+    for (let i = 0; i < length; i++) {
+        for (let j = 0; j < length - 1; j++) {
+            if (challenges[j].rating < challenges[j + 1].rating) {
+                swap(challenges, j, j + 1);
+            }
+        }
+    }
+    return challenges;
 }
+
+function swap(array, firstIndex, secondIndex) {
+    let temp = array[firstIndex];
+    array[firstIndex] = array[secondIndex];
+    array[secondIndex] = temp;
+} 

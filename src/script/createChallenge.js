@@ -62,9 +62,19 @@ function createButton(challengeCard, challengeType, challangeTitle, challengeId)
     challengeCard.appendChild(button);
 }
 
-export function displayAllRooms(data) {
+export function displayAllRooms(data, page) {
+    let challengesHtmlList;
 
-    const challengesHtmlList = document.querySelector(".challenges-list");
+    if (page == "i") {
+        challengesHtmlList = document.querySelector(".challenge-list");
+
+    } else if (page == "c") {
+        challengesHtmlList = document.querySelector(".challenges-list");
+
+    } else {
+        
+        alert("Error at displayAllRooms in createChallenge.js. page != c/i!!")
+    }
 
     challengesHtmlList.innerHTML = "";
 
