@@ -29,6 +29,11 @@ export class Renderer {
         const filterer = new Filter(data);
         const tags = [];
 
+        const searchInput = document.querySelector('.input-search-keyword');
+        searchInput.addEventListener("keyup", () => {
+            filterer.filter();
+        });
+
         data.challenges.forEach(challenge => {
             
             challenge.labels.forEach(label => tags.push(label))

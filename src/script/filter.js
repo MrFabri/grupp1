@@ -4,6 +4,7 @@ import { FilterByTag } from './filterByTag.js';
 import { FilterByType } from './filterByType.js';
 import { RenderRating } from './renderByRating.js';
 import { FilterByRating } from './filterByRating.js';
+import { FilterByText } from './filterByText.js';
 
 export class Filter {
 
@@ -27,13 +28,15 @@ export class Filter {
         const filterByTag = new FilterByTag();
         const filterByType = new FilterByType();
         const filerByRating = new FilterByRating();
+        const filterByText = new FilterByText();
         const filteredList = { challenges: [],};
 
         // Checks all filter elements if they are empty, if they all are empty (returning false) load all challenges
         if ( 
             filterByTag.checkDOM() ||
             filterByType.checkDOM() ||
-            filerByRating.checkDOM()
+            filerByRating.checkDOM() ||
+            filterByText.checkDOM() 
             ){
             
 
@@ -43,7 +46,8 @@ export class Filter {
                 if (
                     (filterByTag.filter(challenge) || !filterByTag.checkDOM()) &&
                     (filterByType.filter(challenge) || !filterByType.checkDOM()) &&
-                    (filerByRating.filter(challenge) || !filerByRating.checkDOM())
+                    (filerByRating.filter(challenge) || !filerByRating.checkDOM()) &&
+                    (filterByText.filter(challenge) || !filterByText.checkDOM())
                     ) {
 
                     filteredList.challenges.push(challenge);    
