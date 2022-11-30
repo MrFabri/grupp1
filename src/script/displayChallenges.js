@@ -56,7 +56,7 @@ window.onresize = doIt;
 // This function resizes the screen
 
 function doIt() {
-    if (document.location == "http://127.0.0.1:5500/challenges.html") {
+    if (document.location == "https://mrfabri.github.io/esc-grupp1/challenges.html") {
         const listElements = document.querySelectorAll("section > ul > li");
         if (window.innerWidth < 1000) {
             for (const element of listElements) {
@@ -95,7 +95,7 @@ const onlineButtons = document.querySelectorAll("a.button.primary");
 onlineButtons.forEach(button => {
     button.addEventListener("click", (ev) => {
         document.cookie = "online";
-        document.location.href = "http://127.0.0.1:5500/challenges.html";
+        document.location.href = "https://mrfabri.github.io/esc-grupp1/challenges.html";
     })
 })
 
@@ -106,7 +106,7 @@ const onSiteButtons = document.querySelectorAll("a.button.secondary");
 onSiteButtons.forEach(button => {
     button.addEventListener("click", (ev) => {
         document.cookie = "offline";
-        document.location.href = "http://127.0.0.1:5500/challenges.html";
+        document.location.href = "https://mrfabri.github.io/esc-grupp1/challenges.html";
     })
 })
 
