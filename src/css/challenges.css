@@ -92,6 +92,10 @@ img {
   max-width: 100%;
 }
 
+.test-class {
+  padding: 1rem !important;
+}
+
 .sec.header {
   background-color: #011827;
 }

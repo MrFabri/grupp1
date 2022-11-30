@@ -21,6 +21,10 @@ img {
     max-width: 100%;
 }
 
+.test-class {
+    padding: 1rem !important;
+}
+
 
 @import "sections/header.scss";
 @import "sections/main-nav.scss";
