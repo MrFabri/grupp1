@@ -16,8 +16,6 @@ function createChallenge(challenge) {
     createStars(challengeItem, challenge.rating);
 
     participants.textContent = challenge.minParticipants + "-" + challenge.maxParticipants + " participants";
-    participants.dataset.minParticipants = challenge.minParticipants;
-    participants.dataset.maxParticipants = challenge.maxParticipants;
     participants.classList.add("challenge-meta");
     challengeItem.appendChild(participants);
 
@@ -25,7 +23,7 @@ function createChallenge(challenge) {
     challengeDescription.classList.add("challenge-description");
     challengeItem.appendChild(challengeDescription);
 
-    createButton(challengeItem, challenge.type, challenge.title, challenge.id);
+    createButton(challengeItem, challenge.type, challenge.title, challenge.id, challenge.minParticipants, challenge.maxParticipants);
 
     return challengeItem;
 }
@@ -46,7 +44,7 @@ function createStars(challengeCard, rating) {
     challengeCard.appendChild(stars);
 }
 
-function createButton(challengeCard, challengeType, challangeTitle, challengeId) {
+function createButton(challengeCard, challengeType, challangeTitle, challengeId, min, max) {
     const button = document.createElement("button");
 
     if (challengeType == "onsite") {
@@ -57,7 +55,7 @@ function createButton(challengeCard, challengeType, challangeTitle, challengeId)
         button.classList.add("button", "primary");
     }
     button.addEventListener("click", function () {
-        book(challangeTitle, challengeId);
+        book(challangeTitle, challengeId, min, max);
     });
     challengeCard.appendChild(button);
 }

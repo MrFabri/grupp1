@@ -5,6 +5,8 @@ let challengeTitle;
 let challengeNumber;
 let times;
 let date;
+let minPart;
+let maxPart;
 let finalRes;
 
 // Close Function, the booking process stops if you click outside the form
@@ -16,6 +18,8 @@ function addCancelOption() {
       challengeNumber = "";
       times = "";
       date = "";
+      minPart = "";
+      maxPart = "";
       body.removeChild(close);
       body.style.overflow = "auto";
       return;
@@ -23,10 +27,24 @@ function addCancelOption() {
   });
 }
 
+function errorInfo(error) {
+  const close = document.querySelector(".booking");
+  const template = `<div class="error"><p>${error}</p></div>`;
+  close.insertAdjacentHTML("afterbegin", template);
+  setTimeout(()=> {
+    const errorDiv = document.querySelector(".error");
+    if(errorDiv) {
+      close.removeChild(errorDiv);
+    }
+  }, 6000);
+}
+
 // Book a room (First Step)
-function book(title, challenge) {
+function book(title, challenge, Min, Max) {
   challengeTitle = title;
   challengeNumber = challenge;
+  minPart = Min;
+  maxPart = Max;
 
   const firstTemplate = `
   <div class="booking" id="bookingPartOne"> 
@@ -59,7 +77,7 @@ async function submitStepOne(challenge) {
   date = document.querySelector("#bookingDate").value;
 
   if (!date) {
-    alert('Please fill the date field!');
+    errorInfo("Please fill the date field!")
     return;
   }
 
@@ -68,7 +86,7 @@ async function submitStepOne(challenge) {
   times = times.slots;
 
   if(!times) {
-    alert('That date is not available, try another one!')
+    errorInfo('That date is not available, try another one!');
     return;
   }
 
@@ -95,13 +113,7 @@ function bookStepTwo() {
         <select name="time" id="time"></select>
 
         <label for="participants">How many participants?</label>
-        <select name="participants" id="participants">
-            <option value="2">2 participants</option>
-            <option value="3">3 participants</option>
-            <option value="4">4 participants</option>
-            <option value="5">5 participants</option>
-            <option value="6">6 participants</option>
-        </select>
+        <select name="participants" id="participants"></select>
 
         <div class="btn-parent">
         <button id="submitBtnTwo" class="button primary">Submit booking</button>
@@ -112,13 +124,23 @@ function bookStepTwo() {
  
   body.insertAdjacentHTML("afterbegin", secondTemplate);
 
+  // Adds the time availables
   let dateTemplate;
+
   times.forEach((time)=> {
     dateTemplate += `<option value="${time}">${time}</option>`
   });
-
   const time = document.querySelector("#time");
   time.insertAdjacentHTML("afterbegin", dateTemplate);
+
+  // Adds the participants
+  let partTemplate;
+  
+  const partDiv = document.querySelector("#participants");
+  for (let i = minPart; i <= maxPart; i++) {
+    partTemplate += `<option value="${i}">${i} participants</option>`
+  }
+  partDiv.insertAdjacentHTML("afterbegin", partTemplate);
 
   // Submit
   const submitBtnTwo = document.querySelector("#submitBtnTwo");
@@ -144,7 +166,7 @@ function bookStepTwo() {
 // Submit Step 2
 async function submitStepTwo(challenge, name, email, date, time, participants) {
   if(!name || !email) {
-    alert('Fill all the fields before submitting!');
+    errorInfo('Fill all the fields before submitting!');
     return;
   }
   const res = await fetch(`${api}/booking/reservations`, {
@@ -188,4 +210,5 @@ function bookStepThree() {
 }
 
 // Starts the whole booking modal
-// book("ESC", 2);
+// Title, Challenge ID, Min Participants, Max Participants
+// book("ESC", 2, 1, 5);
