@@ -45,6 +45,9 @@ function changeCardContent(cardToBeChanged, theNewCard) {
         button.innerHTML = "Book this room";
         button.className = "button secondary";
     }
+    button.addEventListener("click", function () {
+        book(theNewCard.title, theNewCard.id);
+    });
 }
 
 //makes the screen change upon resizing.
@@ -66,8 +69,20 @@ function doIt() {
                 element.style.width = "calc(95%/3)";
                 element.style.maxWidth = "400px";
                 element.style.margin = "0";
-                challengesHtmlList.lastChild.style.marginRight = "auto";
-                challengesHtmlList.lastChild.style.paddingLeft = "2.5%";
+                element.style.marginBottom = "2em";
+                challengesHtmlList.style.justifyContent = "space-between";
+                //  challengesHtmlList.lastChild.style.marginRight = "auto";
+                if (listElements.length > 3 && listElements[listElements.length - 1] === element) {
+                    listElements[listElements.length - 2].style.marginLeft = "0";
+                    listElements[listElements.length - 2].style.marginRight = "0";
+                    listElements[listElements.length - 1].style.marginRight = "auto";
+                    if (!listElements.length % 2 == 0) {
+                        listElements[listElements.length - 1].style.marginLeft = "2.5%";
+                    } else {
+                        listElements[listElements.length - 1].style.marginLeft = "0%";
+                    }
+                }
+                //   challengesHtmlList.lastChild.style.paddingLeft = "2.5%";
             }
         }
     }
@@ -113,20 +128,6 @@ function wellHello() {
         document.querySelector("input#onsite").checked = true;
     }
     document.cookie = "";
-
-
-    // TO BE CONTINUED...
-
-
-    //    const onlineCheckBox = document.querySelector("input#online");
-    //   onlineCheckBox.addEventListener("click", (ev) => {
-    //     if (onlineCheckBox.checked == true) {
-    //        displayOnlineRooms();
-    //   } else {
-    //      displayOnSiteRooms();
-    //  }
-    // })
-
 }
 
 
@@ -134,10 +135,11 @@ function wellHello() {
 
 const main = document.querySelector("main");
 const roomSection = document.createElement("section");
+roomSection.classList.add("challenges");
 const challengesHtmlList = document.createElement("ul");
+challengesHtmlList.classList.add("challenge-list");
 challengesHtmlList.style.display = "flex";
 challengesHtmlList.style.flexWrap = "wrap";
-challengesHtmlList.style.justifyContent = "space-between";
 challengesHtmlList.style.alignContent = "center";
 challengesHtmlList.style.listStyle = "none";
 
@@ -164,13 +166,13 @@ async function displayOnlineRooms() {
     const data = await res.json();
     data.challenges.forEach(challenge => {
         if (challenge.type == "online") {
-            challengesHtmlList.appendChild(createChallenge(challenge));
+            displayThisChallenge(createChallenge(challenge));
         }
     });
-    roomSection.appendChild(challengesHtmlList);
-    roomSection.style.marginTop = "2em";
-    main.appendChild(roomSection);
-    doIt();
+    //  roomSection.appendChild(challengesHtmlList);
+    // roomSection.style.marginTop = "2em";
+    //  main.appendChild(roomSection);
+    //  doIt();
 }
 
 
@@ -181,13 +183,13 @@ async function displayOnSiteRooms() {
     const data = await res.json();
     data.challenges.forEach(challenge => {
         if (challenge.type == "onsite") {
-            challengesHtmlList.appendChild(createChallenge(challenge));
+            displayThisChallenge(createChallenge(challenge));
         }
     });
-    roomSection.appendChild(challengesHtmlList);
-    roomSection.style.marginTop = "2em";
-    main.appendChild(roomSection);
-    doIt();
+    // roomSection.appendChild(challengesHtmlList);
+    // roomSection.style.marginTop = "2em";
+    // main.appendChild(roomSection);
+    // doIt();
 }
 
 
@@ -198,41 +200,49 @@ function createChallenge(challenge) {
     const roomImage = document.createElement("img");
     roomImage.src = challenge.image;
     challengeItem.appendChild(roomImage);
-    const tempDiv = document.createElement("div");
-    createStars(tempDiv, challenge.rating);
     const roomTitle = document.createElement("h3");
     roomTitle.textContent = challenge.title;
+    roomTitle.classList.add("challenge-title");
     //roomTitle.style.paddingLeft = "1em";
     //roomTitle.style.margin = 0;
-    tempDiv.appendChild(roomTitle);
+    challengeItem.appendChild(roomTitle);
+    createStars(challengeItem, challenge.rating);
     const participants = document.createElement("small");
     participants.textContent = challenge.minParticipants + "-" + challenge.maxParticipants + " participants";
     // participants.style.paddingLeft = "1em";
     //participants.classList.add("challenge-meta");
     participants.dataset.minParticipants = challenge.minParticipants;
     participants.dataset.maxParticipants = challenge.maxParticipants;
-    tempDiv.appendChild(participants);
+    challengeItem.appendChild(participants);
     const challengeDescription = document.createElement("p");
     challengeDescription.textContent = challenge.description;
     // challengeDescription.style.margin = "0.5em 0";
     // challengeDescription.classList.toggle("challenge-description");
     //  challengeDescription.style.paddingLeft = "1em";
-    tempDiv.appendChild(challengeDescription);
-    createButton(tempDiv, challenge.type);
-    styleCard(tempDiv);
+    challengeItem.appendChild(challengeDescription);
+    createButton(challengeItem, challenge.type, challenge.title, challenge.id);
+    styleCard(challengeItem);
     //   challengeItem.style.width = "calc(95% / 3)";
     //challengeItem.style.width = "calc(95%/3)";
     //challengeItem.style.width = "100%"
     // challengeItem.style.margin = "auto";
-    tempDiv.style.position = "relative";
-    tempDiv.style.top = "-2.5em";
-    tempDiv.style.padding = "0.5em 0.5em";
-    tempDiv.style.maxWidth = "400px";
-    challengeItem.appendChild(tempDiv);
+    //tempDiv.style.position = "relative";
+    // tempDiv.style.top = "-2.5em";
+    //tempDiv.style.padding = "0.5em 0.5em";
+    //tempDiv.style.maxWidth = "400px";
+    //   challengeItem.appendChild(tempDiv);
     if (window.innerWidth < 1000) {
         challengeItem.style.maxWidth = "400px";
     }
     return challengeItem;
+}
+
+function displayThisChallenge(challenge) {
+    challengesHtmlList.appendChild(challenge);
+    roomSection.appendChild(challengesHtmlList);
+    roomSection.style.marginTop = "2em";
+    main.appendChild(roomSection);
+    doIt();
 }
 
 
@@ -256,7 +266,7 @@ function createStars(challengeCard, rating) {
 
 // Makes the booking button for the displayed challenges.
 
-function createButton(challengeCard, challengeType) {
+function createButton(challengeCard, challengeType, challangeTitle, challengeId) {
     const button = document.createElement("button");
     button.style.display = "block";
     button.style.margin = "0 0.5em 0 auto";
@@ -268,6 +278,9 @@ function createButton(challengeCard, challengeType) {
         button.textContent = "Take challenge online";
         button.className = "button primary";
     }
+    button.addEventListener("click", function () {
+        book(challangeTitle, challengeId);
+    });
     challengeCard.appendChild(button);
 }
 
