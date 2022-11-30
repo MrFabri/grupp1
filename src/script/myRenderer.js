@@ -97,4 +97,5 @@ export function myRenderer (data) {
 
         filterer.filter();
     });
+
 }
