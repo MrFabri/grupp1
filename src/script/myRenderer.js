@@ -2,13 +2,42 @@ import { Filter } from "./filter.js";
 
 export function myRenderer (data) {
     const filterer = new Filter(data);
-    
+
+    // Renders tag buttons
+        const filterer = new Filter(data);
+        const tags = [];
+
+        const filterBtn = document.querySelector(".filter-btn");
+        const filterBox = document.querySelector(".filter");
+        const filterCloseBtn = document.querySelector(".close-filter");
+
+        filterBtn.addEventListener("click", () => {
+            filterBtn.style.display = "none";
+            filterBox.style.display = "block";
+        });
+
+        filterCloseBtn.addEventListener("click", () => {
+            filterBox.style.display = "none";
+            filterBtn.style.display = "block";
+        })
+
+        const searchInput = document.querySelector('.input-search-keyword');
+        searchInput.addEventListener("keyup", () => {
+            filterer.filter();
+        });
+
+        data.challenges.forEach(challenge => {
+            
+            challenge.labels.forEach(label => tags.push(label))
+        });
+
     // Creates an array with all tags from challenges
     const tags = [];
     data.challenges.forEach(challenge => {
             
         challenge.labels.forEach(label => tags.push(label))
     });
+
 
     // Removes duplicate tags
     const tagsBtn = [];
@@ -49,7 +78,6 @@ export function myRenderer (data) {
     });
 
     // adds eventlistener to ByType checkboxes
-    //const filterer = new Filter(data);
     const online = document.querySelector("#online");
     const onSite = document.querySelector("#onsite");
 

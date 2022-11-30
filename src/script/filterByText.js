@@ -1,20 +1,47 @@
+export class FilterByText {
 // selects the elements in DOM
-const searchInput = document.querySelector('.input-search-keyword');
-const roomsUl = document.querySelector('.rooms');
+    
+    //roomsUl = document.querySelector('.rooms');
+    
 
-function search(){
-    const preSearchString = searchInput.value;
-    //if string empty display all rooms
-    if(preSearchString.lenght <= 0){
-        toRenderAll;
+    filter(challenge) {
+                
+        //if string is not empty render rooms matching the string
+        const searchInput = document.querySelector('.input-search-keyword');
+        const preSearchString = searchInput.value;
+        const searchString = preSearchString.toLowerCase();
+
+        const LCTitle = challenge.title.toLowerCase();
+        const LCDescription = challenge.description.toLowerCase();
+
+        if ((preSearchString != "") && (LCTitle.includes(searchString) || LCDescription.includes(searchString))){
+            
+            return true;
+        
+        } else {
+
+            return false;
+        }
+        
     }
-    //if string is not empty render rooms matching the string
-    else{
-        filter(preSearchString);
+
+    checkDOM(){
+        const searchInput = document.querySelector('.input-search-keyword');
+        const preSearchString = searchInput.value;
+
+        // if inout is empty return false
+        if(preSearchString == ""){
+
+            return false;
+        }
+        else {
+
+            return true;
+        }
     }
+
 }
-
-// renders all rooms if the input (searchString) is empty
+/* // renders all rooms if the input (searchString) is empty
 async function toRenderAll(){
     const data = await getChallenges();
     roomsUl.innerText = '';
@@ -32,7 +59,6 @@ function render(id, title, description){
     item.appendChild(content);
     roomsUl.appendChild(item);
 }
-
 async function filter(preSearchString){
     const data = await getChallenges();
     // makes the preSearchString to lowercase so the search ignores if you use upper or lower case
@@ -52,7 +78,7 @@ async function filter(preSearchString){
         roomsUl.innerHTML = 'no matching rooms';
     }
 }
-
+/*
 // fetches the data from the api 
 async function getChallenges(){
     const res = await fetch('https://lernia-sjj-assignments.vercel.app/api/challenges');
@@ -60,4 +86,4 @@ async function getChallenges(){
     return data;
 }
 toRenderAll();
-searchInput.addEventListener("keyup", search);
+ */
