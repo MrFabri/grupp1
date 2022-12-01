@@ -1,6 +1,7 @@
 function createChallenge(challenge) {
     const challengeItem = document.createElement("li");
     const roomImage = document.createElement("img");
+    const roomImageType = document.createElement("img");
     const roomTitle = document.createElement("h3");
     const participants = document.createElement("small");
     const challengeDescription = document.createElement("p");
@@ -8,7 +9,18 @@ function createChallenge(challenge) {
     challengeItem.classList.add("challenge-item");
     roomImage.classList.add("challenge-image");
     roomImage.src = challenge.image;
-    challengeItem.appendChild(roomImage);
+    challengeItem.appendChild(roomImage);    
+
+    if (challenge.type == "online") {
+        roomImageType.classList.add("room-type-img");
+        roomImageType.src = "./src/assets/laptop.svg";
+        challengeItem.appendChild(roomImageType);
+    } else if ( challenge.type == "onsite") {
+        roomImageType.classList.add("room-type-img");
+        roomImageType.src = "./src/assets/home.svg";
+        challengeItem.appendChild(roomImageType);
+    }
+
     roomTitle.textContent = challenge.title;
     roomTitle.classList.add("challenge-title");
     challengeItem.appendChild(roomTitle);

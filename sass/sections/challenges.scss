@@ -24,6 +24,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     min-width: 360px;
+    position: relative;
 
     border-radius: 4px;
     margin: 1em;
@@ -40,6 +41,13 @@
 
     .challenge-image {
         grid-column: span 2;
+    }
+
+    .room-type-img {
+        position: absolute;
+        top: 2%;
+        right: 6%;
+        width: 10%;
     }
 
     .challenge-title {
