@@ -2,6 +2,7 @@ import { MyAPI } from './src/script/myApi.js';
 import { myRenderer } from './src/script/myRenderer.js';
 import { RenderRating } from './src/script/renderByRating.js';
 import { Filter } from './src/script/filter.js';
+import { closeHamburger } from './src/script/addEventToCloseHamburger.js';
 
 class Init {
     async init () {
@@ -20,6 +21,7 @@ class Init {
         const rating = new RenderRating();
         rating.render(data);
         myRenderer(data);
+        closeHamburger();
 
         //addEventsToLinks();
         document.querySelectorAll(".online-link").forEach(btn => {
