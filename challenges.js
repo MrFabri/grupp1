@@ -14,7 +14,11 @@ class Init {
         const mainNavToggle = document.querySelector('.main-nav-toggle');
 
         mainNavToggle.addEventListener('click', () => {
-        mainNav.classList.toggle('open');
+            if (mainNav.classList.toggle('open')) {
+                document.body.style.overflow = "hidden";
+            } else {
+                document.body.style.overflow = "auto";
+            };
         });
         
         const filterer = new Filter(data);
