@@ -1,6 +1,7 @@
 import { MyAPI } from './src/script/myApi.js';
 import { displayAllRooms } from './src/script/createChallenge.js';
 import { threeHighestRanked } from './src/script/topThree.js';
+import { addEventsToLinks } from './src/script/addEventsToLinks.js';
 
 class Init {
     async init () {
@@ -14,6 +15,9 @@ class Init {
         mainNavToggle.addEventListener('click', () => {
         mainNav.classList.toggle('open');
         });
+        
+
+        addEventsToLinks();
         
         displayAllRooms(threeHighestRanked(data), "i");
     };

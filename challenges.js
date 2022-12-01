@@ -1,7 +1,7 @@
 import { MyAPI } from './src/script/myApi.js';
 import { myRenderer } from './src/script/myRenderer.js';
 import { RenderRating } from './src/script/renderByRating.js';
-import { displayAllRooms } from './src/script/createChallenge.js';
+import { Filter } from './src/script/filter.js';
 
 class Init {
     async init () {
@@ -16,10 +16,39 @@ class Init {
         mainNav.classList.toggle('open');
         });
         
+        const filterer = new Filter(data);
         const rating = new RenderRating();
         rating.render(data);
         myRenderer(data);
-        displayAllRooms(data, "c");
+
+        //addEventsToLinks();
+        document.querySelectorAll(".online").forEach(btn => {
+            btn.addEventListener("click", () => {
+                document.querySelector("#online").checked = true;
+                document.querySelector("#onsite").checked = false;
+                filterer.filter();
+            });
+        })
+
+        document.querySelectorAll(".onsite").forEach(btn => {
+            btn.addEventListener("click", () => {
+                document.querySelector("#onsite").checked = true;
+                document.querySelector("#online").checked = false;
+                filterer.filter();
+            });
+        })
+
+        // Filters based on pressed link/button on index.html
+        if (localStorage.getItem("filter") == "online") {
+
+            document.querySelector("#online").checked = true;
+
+        } else if (localStorage.getItem("filter") == "onsite") {
+
+            document.querySelector("#onsite").checked = true;
+        }
+
+        filterer.filter();
     };
 }
 
