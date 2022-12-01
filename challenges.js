@@ -22,7 +22,7 @@ class Init {
         myRenderer(data);
 
         //addEventsToLinks();
-        document.querySelectorAll(".online").forEach(btn => {
+        document.querySelectorAll(".online-link").forEach(btn => {
             btn.addEventListener("click", () => {
                 document.querySelector("#online").checked = true;
                 document.querySelector("#onsite").checked = false;
@@ -30,7 +30,7 @@ class Init {
             });
         })
 
-        document.querySelectorAll(".onsite").forEach(btn => {
+        document.querySelectorAll(".onsite-link").forEach(btn => {
             btn.addEventListener("click", () => {
                 document.querySelector("#onsite").checked = true;
                 document.querySelector("#online").checked = false;
