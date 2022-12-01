@@ -44,6 +44,7 @@
     }
 
     .room-type-img {
+        filter: contrast(160%);
         position: absolute;
         top: 2%;
         right: 6%;
@@ -76,6 +77,21 @@
 .challenges-cta {
     @include responsive-ctas;
     margin: 4rem 3rem;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0rem 1.5rem;
+        
+        img {
+            filter: contrast(160%);
+            width: 20px;
+            min-height: 20px;
+            max-height: 20px;
+            margin-right: 0.5rem;
+        }
+    }
 }
 
 // Challenges /challenges.html

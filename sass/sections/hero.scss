@@ -14,9 +14,25 @@
     @include responsive-ctas;
 
     position: relative;
-    top: -2em;
+    top: 0;
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0rem 1.5rem;
+        
+        img {
+            filter: contrast(160%);
+            width: 20px;
+            min-height: 20px;
+            max-height: 20px;
+            margin-right: 0.5rem;
+        }
+    }
 
     @media (min-width: $bp-medium) {
         margin: 0;
+        top: -1.5em;
     }
 }
