@@ -34,8 +34,34 @@ function createChallenge(challenge) {
     }
     participants.classList.add("challenge-meta");
     challengeItem.appendChild(participants);
+    
+    // Changes description if it is longer then 50 characters then remove the rest and add... Unless the 49 character is not " ", then find the first " " before 49 character and do the same.
+    if(challenge.description.length > 50) {
 
-    challengeDescription.textContent = challenge.description;
+        if (challenge.description.charAt(49) === " ") {
+
+            let text = challenge.description.slice(0, 49) + "...";
+            challengeDescription.textContent = text;
+
+        } else {
+    
+            for(let i=49; i>=0; i--) {
+
+                if(challenge.description.charAt(i) == " ") {
+                
+                    let text = challenge.description.slice(0, i) + "...";
+                    challengeDescription.textContent = text;
+                    break;
+                }
+            }
+        }
+
+        
+    } else {
+
+        challengeDescription.textContent = challenge.description;
+    }
+    
     challengeDescription.classList.add("challenge-description");
     challengeItem.appendChild(challengeDescription);
 
