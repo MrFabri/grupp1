@@ -11,4 +11,4 @@ export function sort(challenges, sortType) {
             break;
     }
     return challenges;
-}
+}   
