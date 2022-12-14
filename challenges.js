@@ -3,12 +3,14 @@ import { myRenderer } from './src/script/myRenderer.js';
 import { RenderRating } from './src/script/renderByRating.js';
 import { Filter } from './src/script/filter.js';
 import { closeHamburger } from './src/script/addEventToCloseHamburger.js';
+import { sort } from './src/script/sorting.js';
+
 
 class Init {
-    async init () {
+    async init() {
         const api = new MyAPI();
         const data = await api.getData();
-        
+
         // Renders hambuger button
         const mainNav = document.querySelector('.main-nav');
         const mainNavToggle = document.querySelector('.main-nav-toggle');
@@ -20,7 +22,7 @@ class Init {
                 document.body.style.overflow = "auto";
             };
         });
-        
+
         const filterer = new Filter(data);
         const rating = new RenderRating();
         rating.render(data);
@@ -35,6 +37,24 @@ class Init {
                 filterer.filter();
             });
         })
+
+        //Sorterar innehållet
+        const sortingSelector = document.querySelector(".sort-selector");
+        sortingSelector.addEventListener("change", function () {
+            switch (this.value) {
+                case "lowest":
+                    sort(filterer.data.challenges, this.value);
+                    break;
+                case "highest":
+                    sort(filterer.data.challenges, this.value);
+                    break;
+                case "name":
+                    sort(filterer.data.challenges, this.value);
+                    break;
+            }
+            filterer.filter();
+        });
+
 
         document.querySelectorAll(".onsite-link").forEach(btn => {
             btn.addEventListener("click", () => {
@@ -53,7 +73,7 @@ class Init {
 
             document.querySelector("#onsite").checked = true;
         }
-
+        //testar bara
         filterer.filter();
     };
 }
