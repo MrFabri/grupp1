@@ -29,11 +29,19 @@ li {
     &.primary {
         background-color: $c-brightred;
         color: white;
+
+        &:hover {
+            background-color: #90150d;
+        }
     }
 
     &.secondary {
         background-color: $c-lightblue;
         color: $c-darkblue;
+
+        &:hover {
+            background-color: #36769D;
+        }
     }
 }
 
@@ -45,7 +53,7 @@ li {
     transition: 0.3s;
     cursor: pointer;
     padding: 3px 8px 4px 8px;
-    
+
     /* display: inline-block; */
 
     &.selected {
@@ -59,8 +67,8 @@ li {
         border: 2px solid $c-blue;
         color: white;
         /* box-shadow: 0px 0px 4px $c-darkblue; */
-    } 
-    
+    }
+
 }
 
 .rating {
@@ -81,7 +89,7 @@ li {
         }
     }
 
-    .half-star{
+    .half-star {
         list-style-type: none;
         width: 1rem;
         height: 1rem;
