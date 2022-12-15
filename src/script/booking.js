@@ -113,7 +113,7 @@ function bookStepTwo() {
         <select name="time" id="time"></select>
 
         <label for="participants">How many participants?</label>
-        <select name="participants" id="participants"></select>
+        <input type="number" name="participants" id="participants">
 
         <div class="btn-parent">
         <button id="submitBtnTwo" class="button primary">Submit booking</button>
@@ -134,14 +134,11 @@ function bookStepTwo() {
   time.insertAdjacentHTML("afterbegin", dateTemplate);
 
   // Adds the participants
-  let partTemplate;
+  const particiDiv = document.querySelector('#participants');
+  particiDiv.min = minPart;
+  particiDiv.max = maxPart;
+  particiDiv.value = minPart;
   
-  const partDiv = document.querySelector("#participants");
-  for (let i = minPart; i <= maxPart; i++) {
-    partTemplate += `<option value="${i}">${i} participants</option>`
-  }
-  partDiv.insertAdjacentHTML("afterbegin", partTemplate);
-
   // Submit
   const submitBtnTwo = document.querySelector("#submitBtnTwo");
   submitBtnTwo.addEventListener('click', () => {
@@ -153,8 +150,7 @@ function bookStepTwo() {
     const timeSelected = timeDiv.options[timeDiv.selectedIndex].text;
 
     // Participants
-    let particiDiv = document.querySelector('#participants');
-    let participantSelected = particiDiv.options[particiDiv.selectedIndex].value;
+    let participantSelected = particiDiv.value;
     participantSelected = parseInt(participantSelected);
 
     submitStepTwo(challengeNumber, name,  email, date, timeSelected, participantSelected);
@@ -167,6 +163,9 @@ function bookStepTwo() {
 async function submitStepTwo(challenge, name, email, date, time, participants) {
   if(!name || !email) {
     errorInfo('Fill all the fields before submitting!');
+    return;
+  } else if ((participants < minPart) || (participants > maxPart) || !participants) {
+    errorInfo('Wrong number of participants enterd!')
     return;
   }
   const res = await fetch(`${api}/booking/reservations`, {
