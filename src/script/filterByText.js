@@ -10,21 +10,24 @@ export class FilterByText {
         const searchInput = document.querySelector('.input-search-keyword');
         const preSearchString = searchInput.value;
         const searchString = preSearchString.toLowerCase();
-
         const LCTitle = challenge.title.toLowerCase();
         const LCDescription = challenge.description.toLowerCase();
+        //console.log(preSearchString.length);
+        if (preSearchString.length >= 3){
+            if ((preSearchString != "") && (LCTitle.includes(searchString) || LCDescription.includes(searchString))){
 
-        if ((preSearchString != "") && (LCTitle.includes(searchString) || LCDescription.includes(searchString))){
+                return true;
             
-            return true;
-        
-        } else {
+            } else {
 
-            return false;
+                return false;
+            }
+        }else{
+
+            return;
         }
         
     }
-
     checkDOM(){
         const searchInput = document.querySelector('.input-search-keyword');
         const preSearchString = searchInput.value;
