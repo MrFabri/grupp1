@@ -7,7 +7,7 @@ import { displayAllRooms } from './createChallenge.js';
 
 export class Filter {
 
-    constructor (data) {
+    constructor(data) {
         this.data = data;
     }
 
@@ -22,24 +22,24 @@ export class Filter {
     
     */
 
-    filter () {
+    filter() {
         /* const renderer = new Renderer(this.data); */
         const filterByTag = new FilterByTag();
         const filterByType = new FilterByType();
         const filerByRating = new FilterByRating();
         const filterByText = new FilterByText();
-        const filteredList = { challenges: [],};
+        const filteredList = { challenges: [], };
         const filterNoMatch = document.querySelector(".filter-no-match");
 
 
         // Checks all filter elements if they are empty, if they all are empty (returning false) load all challenges
-        if ( 
+        if (
             filterByTag.checkDOM() ||
             filterByType.checkDOM() ||
             filerByRating.checkDOM() ||
-            filterByText.checkDOM() 
-            ){
-            
+            filterByText.checkDOM()
+        ) {
+
 
 
             this.data.challenges.forEach(challenge => {
@@ -49,31 +49,35 @@ export class Filter {
                     (filterByType.filter(challenge) || !filterByType.checkDOM()) &&
                     (filerByRating.filter(challenge) || !filerByRating.checkDOM()) &&
                     (filterByText.filter(challenge) || !filterByText.checkDOM())
-                    ) {
-                    
-                    filteredList.challenges.push(challenge);    
+                ) {
+
+                    filteredList.challenges.push(challenge);
                 }
             })
 
             // If any challenge got through the filter, filteredList.length will have at least one challenge and will render that challenge
-            if (filteredList.challenges.length > 0 ){
-    
+            if (filteredList.challenges.length > 0) {
+
                 filterNoMatch.innerText = "";
+                filterNoMatch.style.display = "none";
+                document.querySelector(".display-label > label").innerHTML = "Displaying " + filteredList.challenges.length + " of " + this.data.challenges.length + " results";
                 displayAllRooms(filteredList, "c");
 
             } else {
 
                 document.querySelector(".challenges-list").innerHTML = "";
+                filterNoMatch.style.display = "block";
                 filterNoMatch.innerText = "No challenges matches your filter";
+                document.querySelector(".display-label > label").innerHTML = "Displaying " + filteredList.challenges.length + " of " + this.data.challenges.length + " results";
             }
-        
+
         } else {
-            
+
             this.data.challenges.forEach(challenge => {
 
-                filteredList.challenges.push(challenge);  
+                filteredList.challenges.push(challenge);
             });
-
+            document.querySelector(".display-label > label").innerHTML = "Displaying " + filteredList.challenges.length + " of " + this.data.challenges.length + " results";
             displayAllRooms(filteredList, "c");
 
         }
