@@ -4,13 +4,17 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "sass": "sass --no-source-map sass/main.scss src/css/main.css",
-    "watch": "sass --no-source-map --watch sass/main.scss src/css/main.css",
-    "watch_c": "sass --no-source-map --watch sass/main_challenges.scss src/css/challenges.css"
+    "build": "concurrently --kill-others \"npm run build:main\" \"npm run build:challenges\" ",
+    "build:main": "sass --no-source-map sass/main.scss src/css/main.css --style compressed",
+    "build:challenges": "sass --no-source-map sass/main_challenges.scss src/css/challenges.css --style compressed",
+    "watch": "concurrently --kill-others \"npm run watch:main\" \"npm run watch:challenges\" ",
+    "watch:main": "sass --no-source-map --watch sass/main.scss src/css/main.css",
+    "watch:challenges": "sass --no-source-map --watch sass/main_challenges.scss src/css/challenges.css"
   },
-  "author": "",
+  "author": "Fabricio",
   "license": "ISC",
-  "dependencies": {
-    "sass": "^1.56.1"
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "sass": "^1.56.2"
   }
 }
