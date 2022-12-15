@@ -30,9 +30,15 @@ li {
   background-color: #E3170A;
   color: white;
 }
+.button.primary:hover {
+  background-color: #90150d;
+}
 .button.secondary {
   background-color: #8ACFE5;
   color: #021928;
+}
+.button.secondary:hover {
+  background-color: #36769D;
 }
 
 .tag-button {
@@ -161,6 +167,9 @@ li {
   color: #36769D;
   text-decoration: underline;
   margin: 1em 0;
+}
+.challenges-cta .button.primary:hover {
+  background-color: #90150d;
 }
 @media (min-width: 700px) {
   .challenges-cta {
@@ -629,12 +638,14 @@ main .filter-btn {
   padding: 0.8rem 2rem;
   font-size: 1rem;
   background-color: #8ACFE5;
-  color: #021928;
   border: none;
   align-self: center;
   margin-bottom: 1rem;
   border-radius: 0.4rem;
   cursor: pointer;
+}
+main .filter-btn:hover {
+  background-color: #36769D;
 }
 
 .filter {
@@ -680,7 +691,9 @@ main .filter-btn {
   margin: 0;
   padding-bottom: 0;
 }
-.filter .by-ctn .part-one, .filter .by-ctn .part-two, .filter .by-ctn .part-three {
+.filter .by-ctn .part-one,
+.filter .by-ctn .part-two,
+.filter .by-ctn .part-three {
   margin-bottom: 2rem;
 }
 .filter .by-ctn .part-one form label {
@@ -732,7 +745,9 @@ main .filter-btn {
     margin-top: 1rem;
     display: flex;
   }
-  .filter section.by-ctn .part-one, .filter section.by-ctn .part-two, .filter section.by-ctn .part-three {
+  .filter section.by-ctn .part-one,
+  .filter section.by-ctn .part-two,
+  .filter section.by-ctn .part-three {
     width: 100%;
     padding: 0 1rem;
     display: flex;
@@ -760,6 +775,31 @@ main .filter-btn {
     width: 78%;
   }
 }
+.display-and-sort-wrapper {
+  display: flex;
+}
+
+.display-label {
+  margin-top: 1.75em;
+  width: 70%;
+  font-weight: 700;
+  text-align: center;
+}
+.display-label label {
+  position: relative;
+  top: 25%;
+}
+
+.sorting {
+  width: 30%;
+  margin-top: 1.75em;
+  text-align: center;
+  padding: 0.5em 0;
+}
+.sorting .sort-selector {
+  text-align: center;
+}
+
 .filter-no-match {
   margin-top: 100px;
   text-align: center;
@@ -824,3 +864,5 @@ footer .misc-link + .play-link {
     margin: 0;
   }
 }
+
+/*# sourceMappingURL=challenges.css.map */
