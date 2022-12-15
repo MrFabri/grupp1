@@ -27,6 +27,7 @@ function addCancelOption() {
   });
 }
 
+// Displays an error
 function errorInfo(error) {
   const close = document.querySelector(".booking");
   const template = `<div class="error"><p>${error}</p></div>`;
@@ -38,6 +39,15 @@ function errorInfo(error) {
     }
   }, 6000);
 }
+
+// Validates the email
+function validateEmail(email) {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  );
+};
 
 // Book a room (First Step)
 function book(title, challenge, Min, Max) {
@@ -152,6 +162,12 @@ function bookStepTwo() {
     // Participants
     let participantSelected = particiDiv.value;
     participantSelected = parseInt(participantSelected);
+
+    const val = validateEmail(email);
+    if(val === null) {
+      errorInfo("Type a valid email adress!");
+      return;
+    }
 
     submitStepTwo(challengeNumber, name,  email, date, timeSelected, participantSelected);
   });
