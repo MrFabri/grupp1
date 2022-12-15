@@ -1,5 +1,6 @@
 import { Filter } from "./filter.js";
 
+<<<<<<< HEAD
 export class Renderer {
     
     constructor (data) {
@@ -37,75 +38,117 @@ export class Renderer {
         const tags = [];
         // fix lates
 
+=======
+export function myRenderer (data) {
+    // Renders tag buttons
+    const filterer = new Filter(data);
+    const tags = [];
+>>>>>>> b97db8a5512c86abd2f61b1cacf4be0fbe9ab164
 
-        data.challenges.forEach(challenge => {
+    const filterBtn = document.querySelector(".filter-btn");
+    const filterBox = document.querySelector(".filter");
+    const filterCloseBtn = document.querySelector(".close-filter");
+
+    filterBtn.addEventListener("click", () => {
+        filterBtn.style.display = "none";
+        filterBox.style.display = "block";
+    });
+
+    filterCloseBtn.addEventListener("click", () => {
+        filterBox.style.display = "none";
+        filterBtn.style.display = "block";
+    })
+
+    const searchInput = document.querySelector('.input-search-keyword');
+    searchInput.addEventListener("keyup", () => {
+        filterer.filter();
+    });
+
+    data.challenges.forEach(challenge => {
+
+        challenge.labels.forEach(label => tags.push(label))
+    });
+
+    // Creates an array with all tags from challenges
+    data.challenges.forEach(challenge => {
             
-            challenge.labels.forEach(label => tags.push(label))
-        });
+        challenge.labels.forEach(label => tags.push(label))
+    });
 
-        // Removes duplicate tags
-        const tagsBtn = [];
-        for (let i = 0; i < tags.length; i++) {
 
-            if (tagsBtn.indexOf(tags[i]) === -1) {
+    // Removes duplicate tags
+    const tagsBtn = [];
+    for (let i = 0; i < tags.length; i++) {
 
-                tagsBtn.push(tags[i]);
-            };
+        if (tagsBtn.indexOf(tags[i]) === -1) {
 
+            tagsBtn.push(tags[i]);
         };
 
-        tagsBtn.sort();
+    };
+
+    // Sorts list by name
+    tagsBtn.sort();
     
-        // Renderds tags, adds eventlistner (that runs filterer.filterByTag() when pressed)
-        tagsBtn.forEach(tag => {
-            const tagsDiv = document.querySelector(".by-tag-buttons");
-            const item = document.createElement("button");
+    // Renderds tags, adds eventlistner (that runs filter functoin when pressed)
+    tagsBtn.forEach(tag => {
+        const tagsDiv = document.querySelector(".by-tag-buttons");
+        const item = document.createElement("button");
     
-            item.classList.add("tag-button");
-            item.innerText = tag;
-            item.addEventListener('click', () => {
+        item.classList.add("tag-button");
+        item.innerText = tag;
+        item.addEventListener('click', () => {
 
-                if (item.getAttribute("class") === "tag-button selected") {
-                    item.classList.remove("selected");
+            if (item.getAttribute("class") === "tag-button selected") {
+                item.classList.remove("selected");
 
-                } else {
+            } else {
 
-                    item.classList.add("selected");
-                };
+                item.classList.add("selected");
+            };
                 
+<<<<<<< HEAD
                 bajs.filter();
             });
 
             tagsDiv.appendChild(item);
             
+=======
+            filterer.filter();
+>>>>>>> b97db8a5512c86abd2f61b1cacf4be0fbe9ab164
         });
-    } 
 
-        renderType (data) {
-            // adds eventlistener to ByType checkboxes
-            const filterer = new Filter(data);
-            const online = document.querySelector("#online");
-            const onSite = document.querySelector("#onsite");
-    
-            online.addEventListener("click", () => {
-                
-                if (onSite.checked) {
+        tagsDiv.appendChild(item);
+            
+    });
 
-                    onSite.checked = false;
-                }
+    // adds eventlistener to ByType checkboxes
+    const online = document.querySelector("#online");
+    const onSite = document.querySelector("#onsite");
 
+<<<<<<< HEAD
                 filterer.filter();
             });
+=======
+    online.addEventListener("click", () => {
+        
+        if (onSite.checked) {
+>>>>>>> b97db8a5512c86abd2f61b1cacf4be0fbe9ab164
 
-            onSite.addEventListener("click", () => {
+            onSite.checked = false;
+        }
 
-                if (online.checked) {
+        filterer.filter()
+    });
 
-                    online.checked = false;
-                }
+    onSite.addEventListener("click", () => {
 
-                filterer.filter();
-            });
-    }
+        if (online.checked) {
+
+            online.checked = false;
+        }
+
+        filterer.filter();
+    });
 
 }

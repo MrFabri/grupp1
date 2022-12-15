@@ -6,7 +6,7 @@ export class FilterByRating {
     filter (challenge) {
         
 
-        if (challenge.rating >= this.minRating && challenge.rating <= this.maxRating){
+        if ((challenge.rating >= this.minRating) && (challenge.rating <= this.maxRating)){
             
             return true;
         
@@ -18,14 +18,15 @@ export class FilterByRating {
 
     checkDOM () {
         
-        if(this.minRating > 0 && this.maxRating <= 5) {
-        
-            return true;
-        
-        } else {
+        if (this.minRating == 0 && this.maxRating == 5) {
 
             return false;
 
+        } else {
+
+            return true;
+
         }
+
     }
 }

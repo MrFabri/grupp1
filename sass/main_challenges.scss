@@ -1,6 +1,7 @@
 @import "variables.scss";
-@import "mixins.scss";
 @import "misc.scss";
+@import "mixins.scss";
+@import "sections/challenges.scss";
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
@@ -19,6 +20,10 @@ body {
 
 img {
     max-width: 100%;
+}
+
+.test-class {
+    padding: 1rem !important;
 }
 
 

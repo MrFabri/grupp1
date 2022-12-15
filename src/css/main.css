@@ -90,6 +90,15 @@ li {
 .rating .rating-star.active {
   background-image: url("../../src/assets/star.svg");
 }
+.rating .half-star {
+  list-style-type: none;
+  width: 1rem;
+  height: 1rem;
+  background-image: url("../../src/assets/half-star.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 .sec.header {
   background-color: #011827;
@@ -284,7 +293,7 @@ header h1 {
   flex-direction: column-reverse;
   margin: 1em 3em;
   position: relative;
-  top: -2em;
+  top: 0;
 }
 .hero-cta .button.primary {
   background-color: transparent;
@@ -305,9 +314,23 @@ header h1 {
     color: white;
   }
 }
+.hero-cta a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem 1.5rem;
+}
+.hero-cta a img {
+  filter: contrast(160%);
+  width: 20px;
+  min-height: 20px;
+  max-height: 20px;
+  margin-right: 0.5rem;
+}
 @media (min-width: 700px) {
   .hero-cta {
     margin: 0;
+    top: -1.5em;
   }
 }
 
@@ -358,6 +381,7 @@ header h1 {
 }
 
 .challenge-list {
+  list-style-type: none;
   display: flex;
   overflow-x: scroll;
   -ms-overflow-style: none; /* IE and Edge */
@@ -371,6 +395,7 @@ header h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-width: 360px;
+  position: relative;
   border-radius: 4px;
   margin: 1em;
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
@@ -385,6 +410,13 @@ header h1 {
 }
 .challenge-item .challenge-image {
   grid-column: span 2;
+}
+.challenge-item .room-type-img {
+  filter: contrast(160%);
+  position: absolute;
+  top: 2%;
+  right: 6%;
+  width: 10%;
 }
 .challenge-item .challenge-title {
   grid-column: span 2;
@@ -430,7 +462,49 @@ header h1 {
     color: white;
   }
 }
+.challenges-cta a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem 1.5rem;
+}
+.challenges-cta a img {
+  filter: contrast(160%);
+  width: 20px;
+  min-height: 20px;
+  max-height: 20px;
+  margin-right: 0.5rem;
+}
 
+.challenges-list {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 0;
+  row-gap: 1rem;
+  place-items: center;
+}
+.challenges-list .challenge-item {
+  margin: 0;
+  min-width: unset;
+  max-width: 400px;
+}
+.challenges-list .challenge-item button {
+  padding: 0.7rem 1rem;
+}
+
+@media (min-width: 700px) {
+  .challenges-list {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    place-items: unset;
+  }
+}
 .booking {
   z-index: 100;
   position: fixed;
@@ -442,6 +516,28 @@ header h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.booking .error {
+  z-index: 101;
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 1rem;
+  animation: shake 0.5s;
+}
+.booking .error > p {
+  pointer-events: none;
+  display: block;
+  margin: 0 1rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background-color: white;
+  color: #E3170A;
+  text-align: center;
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
 }
 
 .first-modal,
@@ -541,6 +637,13 @@ header h1 {
 }
 
 @media (min-width: 1000px) {
+  .booking .error {
+    top: 5%;
+  }
+  .booking .error > p {
+    margin: 0 1rem;
+    padding: 2rem 5rem;
+  }
   .first-modal,
   .second-modal,
   .third-modal {
@@ -561,6 +664,41 @@ header h1 {
   to {
     opacity: 1;
     scale: 1;
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
   }
 }
 .story {

@@ -9,7 +9,7 @@
     <title>[ESC] Hacker Escape Rooms</title>
 </head>
 
-<body onload = "threeHighestRanked()">
+<body>
     <!-- Header & Nav -->
     <div class="sec header">
         <div class="sec-cont">
@@ -20,8 +20,8 @@
             <nav class="main-nav">
                 <button class="main-nav-toggle"></button>
                 <menu class="main-menu">
-                    <li class="main-menu-item"><a href="challenges.html">Play online</a></li>
-                    <li class="main-menu-item"><a href="challenges.html">Play on-site</a></li>
+                    <li class="main-menu-item online-link"><a href="challenges.html">Play online</a></li>
+                    <li class="main-menu-item onsite-link"><a href="challenges.html">Play on-site</a></li>
                     <li class="main-menu-item"><a href="#story">The story</a></li>
                     <li class="main-menu-item"><a href="#footer">Contact us </a></li>
                 </menu>
@@ -33,8 +33,14 @@
     <section class="hero">
         <img alt="Hacker in front of screens" src="src/assets/hero.png">
         <div class="hero-cta">
-            <a class="button primary">Online challenges</a>
-            <a class="button secondary" href="challenges.html">On-site challenges</a>
+            <a class="button primary online-link" href="challenges.html">
+                <img src="./src/assets/laptop.svg" alt="laptop" class="room-type-btn">
+                <p>Online challenges</p>
+            </a>
+            <a class="button secondary onsite-link" href="challenges.html">
+                <img src="./src/assets/home.svg" alt="laptop" class="room-type-btn">
+                <p>On-site challenges</p>
+            </a>
         </div>
     </section>
 
@@ -68,71 +74,18 @@
     <section class="challenges">
         <h2>Popular challenges right now</h2>
         <ul class="challenge-list">
-            <li class="challenge-item">
-                <img class="challenge-image" alt="Hacker" src="src/assets/hero.png">
-                <h3 class="challenge-title">Title of room (on-site)</h3>
-                <ul role="meter" class="rating" aria-label="rating" arial-valuemin="0" aria-valuemax="5"
-                    aria-valuenow="4" aria-valuetext="4 out of 5">
 
-                    <li class="rating-star active"></li>
-                    <li class="rating-star active"></li>
-                    <li class="rating-star active"></li>
-                    <li class="rating-star active"></li>
-                    <li class="rating-star"></li>
-                </ul>
-                <small class="challenge-meta">2-6 participants</small>
-                <p class="challenge-description">
-                    Praeterea, ex culpa non invenies unum aut non accusatis
-                    unum. Et nihil inuitam. Nemo nocere tibi
-                    erit, et non inimicos, et
-                </p>
-                <button class="button primary">Book this room</button>
-            </li>
-            <li class="challenge-item">
-                <img class="challenge-image" alt="Hacker" src="src/assets/hero.png">
-                <h3 class="challenge-title">Title of room (on-site)</h3>
-                <ul role="meter" class="rating" aria-label="rating" arial-valuemin="0" aria-valuemax="5"
-                    aria-valuenow="4" aria-valuetext="4 out of 5">
-
-                    <li class="rating-star active"></li>
-                    <li class="rating-star active"></li>
-                    <li class="rating-star active"></li>
-                    <li class="rating-star active"></li>
-                    <li class="rating-star"></li>
-                </ul>
-                <small class="challenge-meta">2-6 participants</small>
-                <p class="challenge-description">
-                    Praeterea, ex culpa non invenies unum aut non accusatis
-                    unum. Et nihil inuitam. Nemo nocere tibi
-                    erit, et non inimicos, et
-                </p>
-                <button class="button primary">Book this room</button>
-            </li>
-            <li class="challenge-item">
-                <img class="challenge-image" alt="Hacker" src="src/assets/hero.png">
-                <h3 class="challenge-title">Title of room (on-site)</h3>
-                <ul role="meter" class="rating" aria-label="rating" arial-valuemin="0" aria-valuemax="5"
-                    aria-valuenow="4" aria-valuetext="4 out of 5">
-
-                    <li class="rating-star active"></li>
-                    <li class="rating-star active"></li>
-                    <li class="rating-star active"></li>
-                    <li class="rating-star active"></li>
-                    <li class="rating-star"></li>
-                </ul>
-                <small class="challenge-meta">2-6 participants</small>
-                <p class="challenge-description">
-                    Praeterea, ex culpa non invenies unum aut non accusatis
-                    unum. Et nihil inuitam. Nemo nocere tibi
-                    erit, et non inimicos, et
-                </p>
-                <button class="button primary">Book this room</button>
-            </li>
         </ul>
 
         <div class="challenges-cta">
-            <a class="button primary" href="">Online challenges</a>
-            <a class="button secondary" href="">On-site challenges</a>
+            <a class="button primary online-link" href="challenges.html">
+                <img src="./src/assets/laptop.svg" alt="laptop" class="room-type-btn">
+                <p>Online challenges</p>
+            </a>
+            <a class="button secondary onsite-link" href="challenges.html">
+                <img src="./src/assets/home.svg" alt="laptop" class="room-type-btn">
+                <p>On-site challenges</p>
+            </a>
         </div>
     </section>
 
@@ -158,7 +111,7 @@
                     nihil inuitam. Nemo nocere tibi erit,
                     et non inimicos, et
                 </p>
-                <button class="button primary">Book on-site today</button>
+                <button class="button primary onsite-link">Book on-site today</button>
             </div>
         </div>
         <div class="usp">
@@ -171,7 +124,7 @@
                     nihil inuitam. Nemo nocere tibi erit,
                     et non inimicos, et
                 </p>
-                <button class="button primary">Book on-site today</button>
+                <button class="button primary onsite-link">Book on-site today</button>
             </div>
         </div>
     </section>
@@ -193,8 +146,8 @@
                     <li class="misc-link"><a href="#story">The Story</a></li>
                     <li class="misc-link"><a href="#footer">Contact Us</a></li>
                     <li class="misc-link"><a href="#footer">Legal</a></li>
-                    <li class="play-link"><a href="#footer">Play online</a></li>
-                    <li class="play-link"><a href="#footer">Play on-site</a></li>
+                    <li class="play-link online-link"><a href="challenges.html">Play online</a></li>
+                    <li class="play-link onsite-link"><a href="challenges.html">Play on-site</a></li>
                 </menu>
             </nav>
             <nav class="footer-social">
@@ -209,9 +162,8 @@
     </footer>
 
     <!-- Scripts -->
-    <script src="app.js" type="module"></script>
-    <script src="booking.js"></script>
-    <script src="displayChallenges.js"></script>
+    <script src="index.js" type="module"></script>
+    <script src="./src/script/booking.js"></script>
 </body>
 
 </html>
