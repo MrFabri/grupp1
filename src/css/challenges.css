@@ -117,8 +117,12 @@ li {
   position: relative;
   border-radius: 4px;
   margin: 1em;
-  box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  box-shadow: 0px 0.5px 4px rgba(0, 0, 0, 0.25);
+}
+.challenge-item:hover {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  filter: contrast(1.1);
 }
 .challenge-item .challenge-title,
 .challenge-item .challenge-description,
@@ -864,5 +868,3 @@ footer .misc-link + .play-link {
     margin: 0;
   }
 }
-
-/*# sourceMappingURL=challenges.css.map */
