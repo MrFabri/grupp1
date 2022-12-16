@@ -60,8 +60,8 @@ li {
 
 .tag-button {
   background-color: transparent;
-  color: #8ACFE5;
-  border: 2px solid #8ACFE5;
+  color: #0f79bf;
+  border: 2px solid #0f79bf;
   border-radius: 20px;
   transition: 0.3s;
   cursor: pointer;
@@ -836,5 +836,3 @@ footer .misc-link + .play-link {
     margin: 0;
   }
 }
-
-/*# sourceMappingURL=main.css.map */
