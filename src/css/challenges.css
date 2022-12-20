@@ -43,8 +43,8 @@ li {
 
 .tag-button {
   background-color: transparent;
-  color: #8ACFE5;
-  border: 2px solid #8ACFE5;
+  color: #0f79bf;
+  border: 2px solid #0f79bf;
   border-radius: 20px;
   transition: 0.3s;
   cursor: pointer;
@@ -661,8 +661,10 @@ main .filter-btn:hover {
   flex-direction: column;
   column-gap: 12rem;
   position: relative;
+  background-color: lightblue;
 }
 .filter h3 {
+  text-align: center;
   font-size: 1.4rem;
 }
 .filter .close-filter {
@@ -686,6 +688,7 @@ main .filter-btn:hover {
   margin: 0;
 }
 .filter .h2-filter-challenges {
+  text-align: center;
   padding: 1rem;
 }
 .filter .h2-filter-challenges {
@@ -700,6 +703,11 @@ main .filter-btn:hover {
 .filter .by-ctn .part-three {
   margin-bottom: 2rem;
 }
+.filter .by-ctn .part-one form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .filter .by-ctn .part-one form label {
   display: block;
   font-size: 1rem;
@@ -713,21 +721,45 @@ main .filter-btn:hover {
   height: 1rem;
 }
 .filter .by-ctn .part-two > div p {
-  margin-left: 55px;
   padding: 0.5rem 0 0.4rem 0;
 }
 .filter .by-ctn .part-two .rating-star {
   cursor: pointer;
 }
+.filter .by-ctn .part-two .container-stars {
+  align-items: center;
+}
 .filter .by-ctn .part-two .container-stars p {
+  text-align: center;
   font-size: 1.3rem;
+}
+.filter .part-three {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.filter .part-three .by-tag-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 73%;
+  align-items: center;
 }
 .filter .part-three .tag-button {
   margin: 3px 0;
 }
 .filter .search-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: auto;
   padding-top: 0;
+}
+.filter .search-cont > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 .filter .search-cont h3 {
   margin-top: 0;
