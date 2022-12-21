@@ -9,7 +9,7 @@ export class FilterByText {
         //if string is not empty render rooms matching the string
         const searchInput = document.querySelector('.input-search-keyword');
         const preSearchString = searchInput.value;
-        const searchString = preSearchString.toLowerCase();
+        const searchString = searchInput.value.toLowerCase();
 
         const LCTitle = challenge.title.toLowerCase();
         const LCDescription = challenge.description.toLowerCase();
